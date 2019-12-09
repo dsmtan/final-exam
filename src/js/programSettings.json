@@ -1,0 +1,31 @@
+{
+  "eventID": "8760123",
+  "eventDays": [
+    {
+      "date": "01-17-2020",
+      "startTime": "10:00",
+      "endTime": "18:00"
+    },
+    {
+      "date": "01-18-2020",
+      "startTime": "10:00",
+      "endTime": "18:00"
+    },
+    {
+      "date": "01-19-2020",
+      "startTime": "10:00",
+      "endTime": "18:00"
+    }
+  ],
+  "eventStages": ["Main stage", "Stage 2", "Stage 3"],
+  "eventTags": [
+    "UX design",
+    "Product design",
+    "Content marketing",
+    "Graphic Design",
+    "Brand design",
+    "Social media",
+    "Web development",
+    "Entrepreneurship"
+  ]
+}

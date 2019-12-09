@@ -1,0 +1,139 @@
+[
+  {
+    "eventID": "8760123",
+    "eventSessions": [
+      {
+        "sessionTitle": "Registration",
+        "sessionDescription": "Register at the reception to get your wristband and grab a coffee.",
+        "sessionSpeakers": [""],
+        "sessionDate": "01-17-2020",
+        "sessionStartTime": "10:00",
+        "sessionEndTime": "10:30",
+        "sessionStage": "Main stage",
+        "sessionTags": "",
+        "sessionColour": "colour2"
+      },
+      {
+        "sessionTitle": "Welcome by Magdalena Tula and Maria Ernst",
+        "sessionDescription": "A warm welcome by our founder and keynote speaker.",
+        "sessionSpeakers": ["Magdalena Tula", "Maria Ernst"],
+        "sessionDate": "01-17-2020",
+        "sessionStartTime": "10:30",
+        "sessionEndTime": "11:30",
+        "sessionStage": "Main stage",
+        "sessionTags": "",
+        "sessionColour": "colour2"
+      },
+      {
+        "sessionTitle": "Panel discussion on trends in 2020",
+        "sessionDescription": "",
+        "sessionSpeakers": [""],
+        "sessionDate": "01-17-2020",
+        "sessionStartTime": "",
+        "sessionEndTime": "",
+        "sessionStage": "",
+        "sessionTags": "",
+        "sessionColour": "colour2"
+      },
+      {
+        "sessionTitle": "Session title",
+        "sessionDescription": "",
+        "sessionSpeakers": [""],
+        "sessionDate": "01-17-2020",
+        "sessionStartTime": "",
+        "sessionEndTime": "",
+        "sessionStage": "",
+        "sessionTags": "",
+        "sessionColour": "colour2"
+      },
+      {
+        "sessionTitle": "Session title",
+        "sessionDescription": "",
+        "sessionSpeakers": [""],
+        "sessionDate": "01-18-2020",
+        "sessionStartTime": "",
+        "sessionEndTime": "",
+        "sessionStage": "",
+        "sessionTags": "",
+        "sessionColour": "colour2"
+      },
+      {
+        "sessionTitle": "Session title",
+        "sessionDescription": "",
+        "sessionSpeakers": [""],
+        "sessionDate": "01-18-2020",
+        "sessionStartTime": "",
+        "sessionEndTime": "",
+        "sessionStage": "",
+        "sessionTags": "",
+        "sessionColour": "colour2"
+      },
+      {
+        "sessionTitle": "Session title",
+        "sessionDescription": "",
+        "sessionSpeakers": [""],
+        "sessionDate": "01-18-2020",
+        "sessionStartTime": "",
+        "sessionEndTime": "",
+        "sessionStage": "",
+        "sessionTags": "",
+        "sessionColour": "colour2"
+      },
+      {
+        "sessionTitle": "Session title",
+        "sessionDescription": "",
+        "sessionSpeakers": [""],
+        "sessionDate": "01-18-2020",
+        "sessionStartTime": "",
+        "sessionEndTime": "",
+        "sessionStage": "",
+        "sessionTags": "",
+        "sessionColour": "colour2"
+      },
+      {
+        "sessionTitle": "Session title",
+        "sessionDescription": "",
+        "sessionSpeakers": [""],
+        "sessionDate": "01-19-2020",
+        "sessionStartTime": "",
+        "sessionEndTime": "",
+        "sessionStage": "",
+        "sessionTags": "",
+        "sessionColour": "colour2"
+      },
+      {
+        "sessionTitle": "Session title",
+        "sessionDescription": "",
+        "sessionSpeakers": [""],
+        "sessionDate": "01-19-2020",
+        "sessionStartTime": "",
+        "sessionEndTime": "",
+        "sessionStage": "",
+        "sessionTags": "",
+        "sessionColour": "colour2"
+      },
+      {
+        "sessionTitle": "Session title",
+        "sessionDescription": "",
+        "sessionSpeakers": [""],
+        "sessionDate": "01-19-2020",
+        "sessionStartTime": "",
+        "sessionEndTime": "",
+        "sessionStage": "",
+        "sessionTags": "",
+        "sessionColour": "colour2"
+      },
+      {
+        "sessionTitle": "Session title",
+        "sessionDescription": "",
+        "sessionSpeakers": [""],
+        "sessionDate": "01-19-2020",
+        "sessionStartTime": "",
+        "sessionEndTime": "",
+        "sessionStage": "",
+        "sessionTags": "",
+        "sessionColour": "colour2"
+      }
+    ]
+  }
+]
