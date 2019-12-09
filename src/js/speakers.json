@@ -1,0 +1,77 @@
+[
+  {
+    "speakerName": "David Kadlec",
+    "speakerImgURL": "/src/images/david.jpg",
+    "speakerPosition": "CEO of Invision"
+  },
+  {
+    "speakerName": "Andrew Nelson",
+    "speakerImgURL": "/src/images/andrew.jpg",
+    "speakerPosition": "Software engineer at Unity"
+  },
+  {
+    "speakerName": "Sarah Petersen",
+    "speakerImgURL": "/src/images/sarah.jpg",
+    "speakerPosition": "CEO of AM Copenhagen"
+  },
+  {
+    "speakerName": "Jane Watt",
+    "speakerImgURL": "src/images/jane.jpg",
+    "speakerPosition": "UX designer at Stupid Studio"
+  },
+  {
+    "speakerName": "Nikolai Godfrey",
+    "speakerImgURL": "/src/images/nikolai.jpg",
+    "speakerPosition": "Content Creator at Vice"
+  },
+  {
+    "speakerName": "Idris Alegrio",
+    "speakerImgURL": "/src/images/idris.jpg",
+    "speakerPosition": "Product Designer"
+  },
+  {
+    "speakerName": "Elisa Walker",
+    "speakerImgURL": "/src/images/elisa.jpg",
+    "speakerPosition": "Technical solution engineer at Microsoft"
+  },
+  {
+    "speakerName": "Morgan Pope",
+    "speakerImgURL": "/src/images/morgan.jpg",
+    "speakerPosition": "CEO of Rise"
+  },
+  {
+    "speakerName": "Johannes Stanley",
+    "speakerImgURL": "/src/images/johannes.jpg",
+    "speakerPosition": "Senior Graphic Designer at Won Won"
+  },
+  {
+    "speakerName": "Jarmila Hill",
+    "speakerImgURL": "/src/images/jarmila.jpg",
+    "speakerPosition": "Digital Developer at KathArt"
+  },
+  {
+    "speakerName": "Erkki Grosch",
+    "speakerImgURL": "/src/images/erkki.jpg",
+    "speakerPosition": "Art Director at Sunrise"
+  },
+  {
+    "speakerName": "Mira Schleier",
+    "speakerImgURL": "/src/images/mira.jpg",
+    "speakerPosition": "Creative producer at ABEL"
+  },
+  {
+    "speakerName": "Lena Stavik",
+    "speakerImgURL": "/src/images/lena.jpg",
+    "speakerPosition": "CEO of Fingerspitz"
+  },
+  {
+    "speakerName": "Samuel Lind",
+    "speakerImgURL": "/src/images/samuel.jpg",
+    "speakerPosition": "Marketing Director at Frankly"
+  },
+  {
+    "speakerName": "Chloe Edeleev",
+    "speakerImgURL": "/src/images/chloe.jpg",
+    "speakerPosition": "Senior UX Designer at Signify"
+  }
+]
