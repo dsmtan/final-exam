@@ -4,7 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="bundle.css" rel="stylesheet" />
     <title>Program</title>
   </head>
-  <body></body>
+  <body>
+    <main id="programPageWrapper">
+      <div class="navbar--mobile">
+        mobile nav
+        <div class="icon--backarrow">--backarrow</div>
+        <div id="button--favouritelist" class="icon--heart">--hearticon</div>
+      </div>
+      <div class="navbar--days"></div>
+      <div class="bottombar--filterdrawer"></div>
+      <!-- set overflow scroll in wrapper not grid -->
+      <div class="program--grid">
+        <div class="column--timeline">column with fixed position</div>
+        <!-- add stage columns and program sessions dynamically -->
+      </div>
+    </main>
+
+    <template id="daysButtonTemplate">
+      <div class="button--days">
+        <p class="p--weekday">Weekday</p>
+        <p class="p--date">Date</p>
+        <div class="div--daydots"><div class="div--dot"></div></div>
+      </div>
+    </template>
+
+    <template id="stageColumnTemplate">
+      <div class="column--stage">
+        <div class="session--content">
+          <h3 class="session--title">Session title</h3>
+          <p class="session--description">Session description</p>
+          <div class="session--speakers">Session speaker avatars</div>
+          <p class="session--duration">Session duration</p>
+          <button class="session--favourite">Heart icon</button>
+        </div>
+      </div>
+    </template>
+
+    <template id="sessionCardTemplate">
+      <div class="session--item">
+        <div class="session--content">
+          <h3 class="session--title">Session title</h3>
+          <p class="session--description">Session description</p>
+          <div class="session--speakers">Session speaker avatars</div>
+          <p class="session--duration">Session duration</p>
+          <button class="session--favourite">Heart icon</button>
+        </div>
+      </div>
+    </template>
+  </body>
 </html>

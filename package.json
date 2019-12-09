@@ -5,8 +5,8 @@
   "main": "./src/js/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config webpack.config.js --progress",
-    "build-production": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
+    "build-production": "cross-env NODE_ENV=production webpack --mode=production --config webpack.config.js",
     "watch": "webpack --progress --watch",
     "server": "webpack-dev-server --open"
   },
@@ -27,5 +27,9 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "muuri": "^0.8.0",
+    "web-animations-js": "^2.3.2"
   }
 }

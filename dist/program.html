@@ -4,7 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="bundle.css" rel="stylesheet" />
     <title>Program</title>
-  <link href="bundle.css" rel="stylesheet"></head>
-  <body><script type="text/javascript" src="bundle.js"></script></body>
+  </head>
+  <body>
+    <h1>Program</h1>
+    <main id="programPageWrapper">
+      <div class="navbar--mobile"></div>
+      <div class="navbar--days"></div>
+      <!-- set overflow scroll in wrapper not grid -->
+      <div class="program--grid">
+        <div class="column--timeline">column with fixed position</div>
+        <div class="column--stage1">column with sessions</div>
+        <div class="column--stage2">column with sessions</div>
+        <div class="column--stage3">column with sessions</div>
+        <!-- add stage columns and program sessions dynamically -->
+      </div>
+    </main>
+
+    <template>
+      <div class="session--item">
+        <div class="session--content">
+          <h3 class="session--title">Session title</h3>
+          <p class="session--description">Session description</p>
+          <div class="session--speakers">Session speaker avatars</div>
+          <p class="session--duration">Session duration</p>
+          <button class="session--favourite">Heart icon</button>
+        </div>
+      </div>
+    </template>
+  <script type="text/javascript" src="program.bundle.js"></script></body>
 </html>
