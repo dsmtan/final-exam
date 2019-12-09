@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap');
+
+@import './globals';
+@import './mediaqueries';
+@import './index';
+@import './program';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  color: $mainColour;
+  font-family: $mainFont;
+}

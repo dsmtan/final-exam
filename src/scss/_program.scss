@@ -1,0 +1,80 @@
+.programPageWrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.navbar--mobile {
+  height: 50px;
+  overflow: hidden;
+}
+
+.navbar--days {
+  position: relative;
+  height: 90px;
+  width: 100vw;
+  margin: 0;
+  text-align: center;
+}
+
+.button--days {
+  display: inline-block;
+  height: 100%;
+  width: calc(100% / 3.2);
+  margin: 0;
+  background-color: white;
+  color: $tameNavy;
+  text-align: center;
+
+  &:hover {
+    background-color: $colour2;
+  }
+
+  &.current {
+    border-bottom: 5px solid $tameNavy;
+  }
+
+  p {
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .p--weekday {
+    font-size: 0.9em;
+    margin-top: 1em;
+  }
+
+  .p--date {
+    font-size: 1.2em;
+    margin-top: 2px;
+  }
+}
+
+.div--daydots {
+  margin-top: 10px;
+  @include flexCenter;
+  .div--dot {
+    height: 8px;
+    width: 8px;
+    background-color: $mainColour;
+    border-radius: 50%;
+  }
+}
+
+.program--grid {
+  position: relative;
+  background-color: $tameGrey;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.session--item {
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  margin: 5px;
+  z-index: 1;
+  background: $colour2;
+  color: #fff;
+}

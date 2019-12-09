@@ -1,0 +1,24 @@
+$mainColour: #bd94e8;
+$colour2: #c6f3e8;
+$colour3: #d6d6d6;
+
+$tameNavy: #0b304c;
+$tameGrey: #ededed;
+
+$mainFont: 'Lato', sans-serif;
+$headerFont: 'Montserrat', sans-serif;
+
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.hide {
+  display: none;
+}
