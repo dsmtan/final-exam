@@ -13,14 +13,11 @@ window.onload = function() {
     .then(res => res.json())
     .then(programSettings => {
       programSettings = programSettings;
-      console.log(programSettings);
-      fetchEventSessions(programSettings.eventID);
-      constructDaysBar(programSettings.eventDays);
+      fetchEventSessions(programSettings);
     });
 };
 
-const fetchEventSessions = eventID => {
-  console.log(eventID);
+const fetchEventSessions = ({ eventID, eventDays }) => {
   // get the right program sessions for this event
   fetch('/src/js/programSessions.json')
     .then(res => res.json())
@@ -31,6 +28,7 @@ const fetchEventSessions = eventID => {
       eventSessions = eventProgram.eventSessions;
       console.log(eventSessions);
     });
+  constructDaysBar(eventDays);
 };
 
 const constructDaysBar = eventDays => {
@@ -48,14 +46,13 @@ const constructDaysBar = eventDays => {
     );
     const dayData = {
       dayNumber,
-      dayDurationHours,
       dayDateNumber,
       dayOfWeek,
     };
     console.log(dayData);
     createDaysButton(dayData);
+    constructTimeline(dayStart, dayEnd, dayDurationHours);
   });
-  // constructTimelineColumn()
 };
 
 const daysBar = document.querySelector('.navbar--days');
@@ -64,20 +61,22 @@ const daysBar = document.querySelector('.navbar--days');
 const createDaysButton = dayData => {
   const dayButtonCopy = daysButtonTemplate.cloneNode(true);
   let dayButtonDiv = dayButtonCopy.querySelector('div');
-  console.log(dayButtonCopy);
-  console.log(dayButtonDiv);
   dayButtonDiv.id = 'dayButton' + dayData.dayNumber;
   dayButtonCopy.querySelector('.p--weekday').textContent = dayData.dayOfWeek;
   dayButtonCopy.querySelector('.p--date').textContent = dayData.dayDateNumber;
 
+  //default current tab set to day 1
   if (dayData.dayNumber === 1) {
     dayButtonDiv.classList.add('current');
   }
   daysBar.appendChild(dayButtonCopy);
 };
 
+const constructTimeline = (dayStart, dayEnd, dayDurationHours) => {};
+
 const dayOnclickHandler = () => {
-  //get class of current has border bottom
+  // get class of current on targetdiv
+  // fetch right data
 };
 
 // render fixed timeline column in grid

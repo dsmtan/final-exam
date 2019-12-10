@@ -4,21 +4,75 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  color: #efbaa7;
-  font-family: "Lato", sans-serif;
-}
-
 .hide {
   display: none;
 }
 
+.programPageWrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.navbar--mobile {
+  height: 50px;
+  overflow: hidden;
+}
+
+.navbar--days {
+  position: relative;
+  height: 90px;
+  width: 100vw;
+  margin: 0;
+  text-align: center;
+}
+
+.button--days {
+  display: inline-block;
+  height: 100%;
+  width: calc(100% / 3.2);
+  margin: 0;
+  background-color: white;
+  color: #0b304c;
+  text-align: center;
+}
+.button--days:hover {
+  background-color: #c6f3e8;
+}
+.button--days.current {
+  border-bottom: 5px solid #0b304c;
+}
+.button--days p {
+  margin: 0;
+  font-weight: bold;
+  text-align: center;
+}
+.button--days .p--weekday {
+  font-size: 0.9em;
+  margin-top: 1em;
+}
+.button--days .p--date {
+  font-size: 1.2em;
+  margin-top: 2px;
+}
+
+.div--daydots {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.div--daydots .div--dot {
+  height: 8px;
+  width: 8px;
+  background-color: #bd94e8;
+  border-radius: 50%;
+}
+
 .program--grid {
   position: relative;
-  background-image: url("/src/images/cat.jpg");
+  background-color: #ededed;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .session--item {
@@ -28,6 +82,14 @@ body {
   height: 100px;
   margin: 5px;
   z-index: 1;
-  background: #d5ad39;
+  background: #c6f3e8;
   color: #fff;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  color: #bd94e8;
+  font-family: "Lato", sans-serif;
 }

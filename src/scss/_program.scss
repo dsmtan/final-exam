@@ -1,17 +1,40 @@
 .programPageWrapper {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  overflow-y: hidden;
 }
 
 .navbar--mobile {
-  height: 50px;
+  height: 45px;
+  max-width: 100vw;
   overflow: hidden;
+  padding: 15px 18px 5px;
+}
+
+.iconwrapper--backarrow {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-image: url('/src/images/arrow_left_solid.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.iconwrapper--heartsolid {
+  position: absolute;
+  display: inline-block;
+  right: 18px;
+  height: 25px;
+  width: 25px;
+  background-image: url('/src/images/heart_solid.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .navbar--days {
-  position: relative;
   height: 90px;
-  width: 100vw;
+  max-width: 100vw;
   margin: 0;
   text-align: center;
 }
@@ -22,20 +45,21 @@
   width: calc(100% / 3.2);
   margin: 0;
   background-color: white;
-  color: $tameNavy;
   text-align: center;
+  color: $tameGrey;
 
   &:hover {
     background-color: $colour2;
   }
 
   &.current {
+    color: $tameNavy;
     border-bottom: 5px solid $tameNavy;
+    font-weight: bold;
   }
 
   p {
     margin: 0;
-    font-weight: bold;
     text-align: center;
   }
 
@@ -45,36 +69,84 @@
   }
 
   .p--date {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-top: 2px;
   }
 }
 
 .div--daydots {
-  margin-top: 10px;
+  margin-top: 7px;
   @include flexCenter;
   .div--dot {
-    height: 8px;
-    width: 8px;
+    margin: 2px;
+    display: inline-block;
+    height: 6px;
+    width: 6px;
     background-color: $mainColour;
     border-radius: 50%;
+
+    &.dot2 {
+      background-color: $colour2;
+    }
   }
 }
 
 .program--grid {
   position: relative;
-  background-color: $tameGrey;
-  width: 100%;
-  min-height: 100vh;
+  background-color: $tameLightGrey;
+  min-width: 100%;
+  height: calc(100vh - 135px);
+  max-height: 100vh;
+  display: grid;
+  grid-template-columns: 42px repeat(4, 78vw);
+  grid-gap: 10px;
+  overflow-x: scroll;
+}
+
+.column--timeline {
+  font-size: 0.6em;
+  color: $tameGrey;
+  text-align: center;
+  padding-top: 35px;
+
+  p {
+    margin: 0 0 12em 0;
+  }
+}
+
+.column--stage {
+  .p--stagetitle {
+    height: 35px;
+    margin: 0;
+    padding-top: 12px;
+    text-align: center;
+    color: $tameGrey;
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
 }
 
 .session--item {
   display: block;
-  position: absolute;
-  width: 200px;
-  height: 100px;
-  margin: 5px;
-  z-index: 1;
-  background: $colour2;
-  color: #fff;
+  width: 100%;
+  height: 120px;
+  color: $tameNavy;
+  background-color: white;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 5px;
+  border-left: 5px solid $mainColour;
+  box-shadow: 1px 2px 5px 1px #c4c4c480;
+
+  .session--title {
+    margin: 0;
+    font-size: 0.9em;
+    font-family: $headerFont;
+    font-weight: 800;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.8em;
+  }
 }
