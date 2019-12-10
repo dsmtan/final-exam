@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,15 +10,46 @@
   <body>
     <main id="programPageWrapper">
       <div class="navbar--mobile">
-        mobile nav
-        <div class="icon--backarrow">--backarrow</div>
-        <div id="button--favouritelist" class="icon--heart">--hearticon</div>
+        <div id="button--backarrow" class="iconwrapper--backarrow"></div>
+        <div id="button--favouritelist" class="iconwrapper--heartsolid"></div>
       </div>
       <div class="navbar--days"></div>
       <div class="bottombar--filterdrawer"></div>
-      <!-- set overflow scroll in wrapper not grid -->
+
       <div class="program--grid">
-        <div class="column--timeline">column with fixed position</div>
+        <div class="column--timeline">
+          <p>10:00</p>
+          <p>11:00</p>
+          <p>12:00</p>
+          <p>13:00</p>
+          <p>14:00</p>
+          <p>15:00</p>
+          <p>16:00</p>
+          <p>17:00</p>
+          <p>18:00</p>
+        </div>
+        <!-- <div class="column--stage">
+          <p class="p--stagetitle">Main stage</p>
+          <div class="session--item">
+            <img class="icon--heartoutline" src="/src/images/heart.svg" />
+            <h3 class="session--title">
+              Welcome bitches
+            </h3>
+            <p class="session--description">
+              Register at the reception to get your wristband and grab a coffee.
+            </p>
+            <div class="session--speakers">
+              <img class="session--avatars" src="/src/images/jane.jpg" />
+              <img class="session--avatars" src="/src/images/samuel.jpg" />
+            </div>
+            <p class="session--duration">1h30m</p>
+            <div class="session--tags">
+              <div class="session--styletag">UX design</div>
+              <div class="session--styletag">Marketing</div>
+            </div>
+          </div>
+        </div> -->
+
         <!-- add stage columns and program sessions dynamically -->
       </div>
     </main>
@@ -27,30 +58,37 @@
       <div class="button--days">
         <p class="p--weekday">Weekday</p>
         <p class="p--date">Date</p>
-        <div class="div--daydots"><div class="div--dot"></div></div>
+        <div class="div--daydots">
+          <div class="div--dot"></div>
+          <div class="div--dot dot2"></div>
+        </div>
+        <!-- add dynamically depending on tags -->
       </div>
     </template>
 
     <template id="stageColumnTemplate">
       <div class="column--stage">
-        <div class="session--content">
-          <h3 class="session--title">Session title</h3>
-          <p class="session--description">Session description</p>
-          <div class="session--speakers">Session speaker avatars</div>
-          <p class="session--duration">Session duration</p>
-          <button class="session--favourite">Heart icon</button>
-        </div>
+        <p class="p--stagetitle">Stage name</p>
       </div>
     </template>
 
     <template id="sessionCardTemplate">
       <div class="session--item">
-        <div class="session--content">
-          <h3 class="session--title">Session title</h3>
-          <p class="session--description">Session description</p>
-          <div class="session--speakers">Session speaker avatars</div>
-          <p class="session--duration">Session duration</p>
-          <button class="session--favourite">Heart icon</button>
+        <img class="icon--heartoutline" src="/src/images/heart.svg" />
+        <h3 class="session--title">
+          Title
+        </h3>
+        <p class="session--description">
+          Description
+        </p>
+        <div class="session--speakers">
+          <img class="session--avatars" src="/src/images/jane.jpg" />
+          <img class="session--avatars" src="/src/images/samuel.jpg" />
+        </div>
+        <p class="session--duration">1h30m</p>
+        <div class="session--tags">
+          <div class="session--styletag">UX design</div>
+          <div class="session--styletag">Marketing</div>
         </div>
       </div>
     </template>

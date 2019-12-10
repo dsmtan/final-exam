@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -28,22 +28,27 @@
           <p>17:00</p>
           <p>18:00</p>
         </div>
-        <div class="column--stage">
+        <!-- <div class="column--stage">
           <p class="p--stagetitle">Main stage</p>
           <div class="session--item">
-            <h3 class="session--title">Welcome bitches</h3>
+            <img class="icon--heartoutline" src="/src/images/heart.svg" />
+            <h3 class="session--title">
+              Welcome bitches
+            </h3>
             <p class="session--description">
               Register at the reception to get your wristband and grab a coffee.
             </p>
-            <div class="session--speakers">()()()</div>
+            <div class="session--speakers">
+              <img class="session--avatar" src="/src/images/jane.jpg" />
+              <img class="session--avatar" src="/src/images/samuel.jpg" />
+            </div>
             <p class="session--duration">1h30m</p>
-            <div class="session--tags">tags</div>
-            <div class="session--favourite">
-              <img class="icon--heartoutline" src="/src/images/heart.svg" />
+            <div class="session--tags">
+              <div class="session--styletag">UX design</div>
+              <div class="session--styletag">Marketing</div>
             </div>
           </div>
-        </div>
-        <div class="column--timeline"></div>
+        </div> -->
 
         <!-- add stage columns and program sessions dynamically -->
       </div>
@@ -69,14 +74,19 @@
 
     <template id="sessionCardTemplate">
       <div class="session--item">
-        <h3 class="session--title">Welcome bitches</h3>
+        <img class="icon--heartoutline" src="/src/images/heart.svg" />
+        <h3 class="session--title">
+          Title
+        </h3>
         <p class="session--description">
-          Register at the reception to get your wristband and grab a coffee.
+          Description
         </p>
-        <div class="session--speakers">()()()</div>
+        <div class="session--speakers"></div>
         <p class="session--duration">1h30m</p>
-        <div class="session--tags">tags</div>
-        <button class="session--favourite">Heart icon</button>
+        <div class="session--tags">
+          <div class="session--styletag">UX design</div>
+          <div class="session--styletag">Marketing</div>
+        </div>
       </div>
     </template>
   </body>

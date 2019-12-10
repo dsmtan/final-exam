@@ -17,7 +17,7 @@
       "endTime": "18:00"
     }
   ],
-  "eventStages": ["Main stage", "Stage 2", "Stage 3"],
+  "eventStages": ["Main Stage", "Inspiration Stage", "Panel Stage"],
   "eventTags": [
     "UX design",
     "Product design",

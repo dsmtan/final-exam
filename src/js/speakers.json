@@ -73,5 +73,10 @@
     "speakerName": "Chloe Edeleev",
     "speakerImgURL": "/src/images/chloe.jpg",
     "speakerPosition": "Senior UX Designer at Signify"
+  },
+  {
+    "speakerName": "Anders Stenfors",
+    "speakerImgURL": "/src/images/chloe.jpg",
+    "speakerPosition": "Founder of GroupDMM"
   }
 ]
