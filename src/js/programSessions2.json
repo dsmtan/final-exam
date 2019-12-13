@@ -12,7 +12,7 @@
         "sessionEndTime": "10:30",
         "sessionStage": "Main Stage",
         "sessionTags": [],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1001",
@@ -24,7 +24,7 @@
         "sessionEndTime": "11:00",
         "sessionStage": "Main Stage",
         "sessionTags": [],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1002",
@@ -36,7 +36,7 @@
         "sessionEndTime": "12:15",
         "sessionStage": "Main Stage",
         "sessionTags": ["Development"],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1003",
@@ -52,8 +52,8 @@
         "sessionStartTime": "11:15",
         "sessionEndTime": "12:15",
         "sessionStage": "Panel Stage",
-        "sessionTags": ["UX Design", "Content Marketing", "Graphic Design"],
-        "break": false
+        "sessionTags": ["UX design", "Marketing", "Graphic design"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1004",
@@ -64,8 +64,8 @@
         "sessionStartTime": "11:15",
         "sessionEndTime": "12:15",
         "sessionStage": "Main Stage",
-        "sessionTags": ["Graphic Design"],
-        "break": false
+        "sessionTags": ["Graphic design"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1042",
@@ -77,7 +77,7 @@
         "sessionEndTime": "13:00",
         "sessionStage": "Main Stage",
         "sessionTags": [],
-        "break": true
+        "isBreak": true
       },
       {
         "sessionID": "sess1005",
@@ -89,7 +89,7 @@
         "sessionEndTime": "13:00",
         "sessionStage": "Panel Stage",
         "sessionTags": [],
-        "break": true
+        "isBreak": true
       },
       {
         "sessionID": "sess1006",
@@ -101,19 +101,19 @@
         "sessionEndTime": "13:00",
         "sessionStage": "Inspiration Stage",
         "sessionTags": [],
-        "break": true
+        "isBreak": true
       },
       {
         "sessionID": "sess1007",
         "sessionTitle": "How great UX can get you more customers",
-        "sessionDescription": "Senior UX Designer Chloe Edeleev, talks about how good user experience, can make your customers stay and get your new customers. And why UX design is so important for your business.",
+        "sessionDescription": "Senior UX designer Chloe Edeleev, talks about how good user experience, can make your customers stay and get your new customers. And why UX design is so important for your business.",
         "sessionSpeakers": ["Chloe Edeleev"],
         "sessionDate": "01-17-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
         "sessionStage": "Main Stage",
-        "sessionTags": ["UX Design", "Content Marketing"],
-        "break": false
+        "sessionTags": ["UX design", "Marketing"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1008",
@@ -130,7 +130,7 @@
         "sessionEndTime": "15:00",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Workshop"],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1009",
@@ -141,12 +141,12 @@
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
         "sessionStage": "Inspiration Stage",
-        "sessionTags": ["Graphic Design", "Content Marketing", "Social Media"],
-        "break": false
+        "sessionTags": ["Graphic design", "Marketing", "Social media"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1010",
-        "sessionTitle": "Going from being CEO to be leader of a company",
+        "sessionTitle": "Going from CEO to leader of a company",
         "sessionDescription": "Lena Stavik takes you on her journey from starting a company to become a leader of her company. She will touch on why she prefer to call herself a leader instead of CEO.",
         "sessionSpeakers": ["Lena Stavik"],
         "sessionDate": "01-17-2020",
@@ -154,19 +154,19 @@
         "sessionEndTime": "15:15",
         "sessionStage": "Main Stage",
         "sessionTags": ["Business"],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1011",
         "sessionTitle": "How to build optimize a company's brand identity",
-        "sessionDescription": "Idris Alegrio works as a product deisgner, but have years of experience within brand designing. He talks about product design and how to incorporate and optimize a company's brand identity in a product design.",
+        "sessionDescription": "Idris Alegrio works as a product designer, but have years of experience within brand designing. He talks about product design and how to incorporate and optimize a company's brand identity in a product design.",
         "sessionSpeakers": ["Idris Alegrio"],
         "sessionDate": "01-17-2020",
         "sessionStartTime": "14:15",
         "sessionEndTime": "15:15",
         "sessionStage": "Inspiration Stage",
-        "sessionTags": ["Graphic Design", "Product Design"],
-        "break": false
+        "sessionTags": ["Graphic design", "Product design"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1012",
@@ -182,8 +182,8 @@
         "sessionStartTime": "15:00",
         "sessionEndTime": "16:30",
         "sessionStage": "Panel Stage",
-        "sessionTags": ["Business", "Development", "UX Design"],
-        "break": false
+        "sessionTags": ["Business", "Development", "UX design"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1013",
@@ -195,7 +195,7 @@
         "sessionEndTime": "18:00",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Networking"],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1014",
@@ -207,7 +207,7 @@
         "sessionEndTime": "10:30",
         "sessionStage": "Main Stage",
         "sessionTags": [],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1015",
@@ -218,8 +218,8 @@
         "sessionStartTime": "10:30",
         "sessionEndTime": "12:00",
         "sessionStage": "Main Stage",
-        "sessionTags": ["Development", "UX Design"],
-        "break": false
+        "sessionTags": ["Development", "UX design"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1016",
@@ -231,7 +231,7 @@
         "sessionEndTime": "12:00",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Workshop", "Development"],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1017",
@@ -242,8 +242,8 @@
         "sessionStartTime": "11:00",
         "sessionEndTime": "12:00",
         "sessionStage": "Main Stage",
-        "sessionTags": ["Graphic Design"],
-        "break": false
+        "sessionTags": ["Graphic design"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1018",
@@ -255,7 +255,7 @@
         "sessionEndTime": "13:00",
         "sessionStage": "Main Stage",
         "sessionTags": [],
-        "break": true
+        "isBreak": true
       },
       {
         "sessionID": "sess1019",
@@ -267,7 +267,7 @@
         "sessionEndTime": "13:00",
         "sessionStage": "Panel Stage",
         "sessionTags": [],
-        "break": true
+        "isBreak": true
       },
       {
         "sessionID": "sess1020",
@@ -279,19 +279,19 @@
         "sessionEndTime": "13:00",
         "sessionStage": "Inspiration Stage",
         "sessionTags": [],
-        "break": true
+        "isBreak": true
       },
       {
         "sessionID": "sess1021",
         "sessionTitle": "How great UX can get you more customers",
-        "sessionDescription": "Senior UX Designer Chloe Edeleev, talks about how good user experience, can make your customers stay and get your new customers. And why UX design is so important for your business.",
+        "sessionDescription": "Senior UX designer Chloe Edeleev, talks about how good user experience, can make your customers stay and get your new customers. And why UX design is so important for your business.",
         "sessionSpeakers": ["Chloe Edeleev"],
         "sessionDate": "01-18-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
         "sessionStage": "Main Stage",
-        "sessionTags": ["UX Design", "Content Marketing"],
-        "break": false
+        "sessionTags": ["UX design", "Marketing"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1022",
@@ -307,8 +307,8 @@
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:30",
         "sessionStage": "Panel Stage",
-        "sessionTags": ["Development", "Product Design", "Content Marketing"],
-        "break": false
+        "sessionTags": ["Development", "Product design", "Marketing"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1023",
@@ -319,8 +319,8 @@
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
         "sessionStage": "Inspiration Stage",
-        "sessionTags": ["Graphic Design", "Content Marketing", "Social Media"],
-        "break": false
+        "sessionTags": ["Graphic design", "Marketing", "Social media"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1024",
@@ -332,7 +332,7 @@
         "sessionEndTime": "15:15",
         "sessionStage": "Main Stage",
         "sessionTags": ["Business"],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1025",
@@ -344,19 +344,19 @@
         "sessionEndTime": "16:35",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Business"],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1026",
         "sessionTitle": "How to build optimize a company's brand identity",
-        "sessionDescription": "Idris Alegrio works as a product deisgner, but have years of experience within brand designing. He talks about product design and how to incorporate and optimize a company's brand identity in a product design.",
+        "sessionDescription": "Idris Alegrio works as a product designer, but have years of experience within brand designing. He talks about product design and how to incorporate and optimize a company's brand identity in a product design.",
         "sessionSpeakers": ["Idris Alegrio"],
         "sessionDate": "01-18-2020",
         "sessionStartTime": "14:15",
         "sessionEndTime": "15:15",
         "sessionStage": "Inspiration Stage",
-        "sessionTags": ["Graphic Design", "Product Design"],
-        "break": false
+        "sessionTags": ["Graphic design", "Product design"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1027",
@@ -368,7 +368,7 @@
         "sessionEndTime": "17:30",
         "sessionStage": "Main Stage",
         "sessionTags": ["Networking"],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1028",
@@ -380,7 +380,7 @@
         "sessionEndTime": "10:30",
         "sessionStage": "Main Stage",
         "sessionTags": [],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1029",
@@ -391,8 +391,8 @@
         "sessionStartTime": "10:30",
         "sessionEndTime": "12:00",
         "sessionStage": "Main Stage",
-        "sessionTags": ["Development", "UX Design"],
-        "break": false
+        "sessionTags": ["Development", "UX design"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1030",
@@ -404,7 +404,7 @@
         "sessionEndTime": "12:00",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Workshop", "Development"],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1031",
@@ -415,8 +415,8 @@
         "sessionStartTime": "11:00",
         "sessionEndTime": "12:00",
         "sessionStage": "Main Stage",
-        "sessionTags": ["Graphic Design"],
-        "break": false
+        "sessionTags": ["Graphic design"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1032",
@@ -428,7 +428,7 @@
         "sessionEndTime": "13:00",
         "sessionStage": "Main Stage",
         "sessionTags": [],
-        "break": true
+        "isBreak": true
       },
       {
         "sessionID": "sess1033",
@@ -440,7 +440,7 @@
         "sessionEndTime": "13:00",
         "sessionStage": "Panel Stage",
         "sessionTags": [],
-        "break": true
+        "isBreak": true
       },
       {
         "sessionID": "sess1034",
@@ -452,19 +452,19 @@
         "sessionEndTime": "13:00",
         "sessionStage": "Inspiration Stage",
         "sessionTags": [],
-        "break": true
+        "isBreak": true
       },
       {
         "sessionID": "sess1035",
         "sessionTitle": "How great UX can get you more customers",
-        "sessionDescription": "Senior UX Designer Chloe Edeleev, talks about how good user experience, can make your customers stay and get your new customers. And why UX design is so important for your business.",
+        "sessionDescription": "Senior UX designer Chloe Edeleev, talks about how good user experience, can make your customers stay and get your new customers. And why UX design is so important for your business.",
         "sessionSpeakers": ["Chloe Edeleev"],
         "sessionDate": "01-19-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
         "sessionStage": "Main Stage",
-        "sessionTags": ["UX Design", "Content Marketing"],
-        "break": false
+        "sessionTags": ["UX design", "Marketing"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1036",
@@ -480,8 +480,8 @@
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:30",
         "sessionStage": "Panel Stage",
-        "sessionTags": ["Development", "Product Design", "Content Marketing"],
-        "break": false
+        "sessionTags": ["Development", "Product design", "Marketing"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1037",
@@ -492,8 +492,8 @@
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
         "sessionStage": "Inspiration Stage",
-        "sessionTags": ["Graphic Design", "Content Marketing", "Social Media"],
-        "break": false
+        "sessionTags": ["Graphic design", "Marketing", "Social media"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1038",
@@ -505,7 +505,7 @@
         "sessionEndTime": "15:15",
         "sessionStage": "Main Stage",
         "sessionTags": ["Business"],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1039",
@@ -517,19 +517,19 @@
         "sessionEndTime": "16:35",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Business"],
-        "break": false
+        "isBreak": false
       },
       {
         "sessionID": "sess1040",
         "sessionTitle": "How to build optimize a company's brand identity",
-        "sessionDescription": "Idris Alegrio works as a product deisgner, but have years of experience within brand designing. He talks about product design and how to incorporate and optimize a company's brand identity in a product design.",
+        "sessionDescription": "Idris Alegrio works as a product designer, but have years of experience within brand designing. He talks about product design and how to incorporate and optimize a company's brand identity in a product design.",
         "sessionSpeakers": ["Idris Alegrio"],
         "sessionDate": "01-19-2020",
         "sessionStartTime": "14:15",
         "sessionEndTime": "15:15",
         "sessionStage": "Inspiration Stage",
-        "sessionTags": ["Graphic Design", "Product Design"],
-        "break": false
+        "sessionTags": ["Graphic design", "Product design"],
+        "isBreak": false
       },
       {
         "sessionID": "sess1041",
@@ -541,7 +541,7 @@
         "sessionEndTime": "18:00",
         "sessionStage": "Main Stage",
         "sessionTags": ["Networking"],
-        "break": false
+        "isBreak": false
       }
     ]
   }

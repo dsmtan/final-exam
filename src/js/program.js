@@ -49,7 +49,7 @@ const fetchEventSessions = ({ eventID, eventDays, eventStages }) => {
 const constructDaysBar = eventDays => {
   eventDays.map((day, index) => {
     let dayNumber = index + 1;
-    let dayStart = new Date(`${day.date}, ${day.startTime}`); //conver to UTC format
+    let dayStart = new Date(`${day.date}, ${day.startTime}`); //convert to UTC format
     let dayEnd = new Date(`${day.date}, ${day.endTime}`);
     let dayDurationHours =
       (dayEnd.getTime() - dayStart.getTime()) / (1000 * 3600); //number of sections to create vertical timeline
@@ -118,40 +118,73 @@ const prepareColumnData = (eventDays, eventStages) => {
     const sessionsByStage = sessionsFirstDay.filter(
       session => session.sessionStage === stage
     );
-    console.log(sessionsByStage);
     // for each stage append session items
     displaySessionsByStage(stage, sessionsByStage);
   });
 };
 
 const displaySessionsByStage = (stage, sessionsByStage) => {
-  sessionsByStage.map(session => {
-    const sessionCardCopy = sessionCardTemplate.cloneNode(true);
-    let sessionItem = sessionCardCopy.querySelector('.session--item');
-    sessionItem.id = session.sessionID;
+  sessionsByStage.map(
+    ({
+      sessionID,
+      sessionTitle,
+      sessionDescription,
+      sessionSpeakers,
+      sessionDate,
+      sessionStartTime,
+      sessionEndTime,
+      sessionStage,
+      sessionTags,
+      isBreak,
+    }) => {
+      const sessionCardCopy = sessionCardTemplate.cloneNode(true);
+      let sessionItem = sessionCardCopy.querySelector('.session--item');
+      sessionItem.id = sessionID;
 
-    // add session content
-    sessionCardCopy.querySelector('.session--title').textContent =
-      session.sessionTitle;
-    sessionCardCopy.querySelector('.session--description').textContent =
-      session.sessionDescription;
+      // add session content
+      sessionCardCopy.querySelector(
+        '.session--title'
+      ).textContent = sessionTitle;
+      sessionCardCopy.querySelector(
+        '.session--description'
+      ).textContent = sessionDescription;
 
-    // if there are speakers - for each speaker create avatar
-    session.sessionSpeakers.length > 0 &&
-      session.sessionSpeakers.map(sessionSpeaker => {
-        console.log(sessionSpeaker);
-        const speakerImg = createSpeakerAvatar(sessionSpeaker);
-        const speakerDiv = sessionCardCopy.querySelector('.session--speakers');
-        speakerDiv.appendChild(speakerImg);
-      });
+      sessionCardCopy.querySelector(
+        '.session--duration'
+      ).textContent = calculateSessionDuration(
+        sessionDate,
+        sessionStartTime,
+        sessionEndTime
+      );
 
-    // for each session tag create tag
+      if (!isBreak) {
+        // if there are speakers - for each speaker create avatar
+        sessionSpeakers.length > 0 &&
+          sessionSpeakers.map(sessionSpeaker => {
+            const speakerImg = createSpeakerAvatar(sessionSpeaker);
+            const speakerDiv = sessionCardCopy.querySelector(
+              '.session--speakers'
+            );
+            speakerDiv.appendChild(speakerImg);
+          });
 
-    const parentID = '#column' + session.sessionStage.replace(/\s/g, '');
-    const parentColumn = document.querySelector(parentID);
+        // for each session tag add tag
+        sessionTags.length > 0 &&
+          sessionTags.map(sessionTag => {
+            const newTag = document.createElement('div');
+            newTag.classList.add('session--styletag');
+            newTag.innerHTML = sessionTag;
+            const tagsDiv = sessionCardCopy.querySelector('.session--tags');
+            tagsDiv.appendChild(newTag);
+          });
+      }
 
-    parentColumn.appendChild(sessionCardCopy);
-  });
+      const parentID = '#column' + sessionStage.replace(/\s/g, '');
+      const parentColumn = document.querySelector(parentID);
+
+      parentColumn.appendChild(sessionCardCopy);
+    }
+  );
 };
 
 const createSpeakerAvatar = sessionSpeaker => {
@@ -162,6 +195,15 @@ const createSpeakerAvatar = sessionSpeaker => {
   speakerAvatar.src = speakerData.speakerImgURL;
   speakerAvatar.classList.add('session--avatar');
   return speakerAvatar;
+};
+
+const calculateSessionDuration = (dayDate, startTime, endTime) => {
+  let sessionStart = new Date(`${dayDate}, ${startTime}`); //convert to UTC format
+  let sessionEnd = new Date(`${dayDate}, ${endTime}`);
+  let totalMins = Math.floor((sessionEnd - sessionStart) / 60000);
+  let durationHrs = Math.floor(totalMins / 60);
+  let durationMin = totalMins - durationHrs * 60;
+  return `${durationHrs}h${durationMin}m`;
 };
 
 // render fixed timeline column in grid
