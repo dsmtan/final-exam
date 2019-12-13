@@ -1,1 +1,101 @@
-!function(e){var t={};function n(o){if(t[o])return t[o].exports;var r=t[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)n.d(o,r,function(t){return e[t]}.bind(null,r));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=2)}({2:function(e,t,n){"use strict";var o=document.querySelector(".program--grid"),r=[],s=[],a=document.querySelector("#daysButtonTemplate").content,c=document.querySelector("#stageColumnTemplate").content,i=document.querySelector("#sessionCardTemplate").content;window.onload=function(){fetch("/src/js/programSettings.json").then(function(e){return e.json()}).then(function(e){u(e)}),fetch("/src/js/speakers.json").then(function(e){return e.json()}).then(function(e){r=e})};var u=function(e){var t=e.eventID,n=e.eventDays,o=e.eventStages;fetch("/src/js/programSessions2.json").then(function(e){return e.json()}).then(function(e){var r=e.find(function(e){return e.eventID===t});s=r.eventSessions,console.log(s),s.length>0&&(l(n),p(n,o))})},l=function(e){e.map(function(e,t){var n=t+1,o=new Date("".concat(e.date,", ").concat(e.startTime)),r=(new Date("".concat(e.date,", ").concat(e.endTime)).getTime(),o.getTime(),o.getDate()),s=new Intl.DateTimeFormat("en-US",{weekday:"short"}).format(o);f({dayNumber:n,dayDateNumber:r,dayOfWeek:s})}),m()},d=document.querySelector(".navbar--days"),f=function(e){var t=a.cloneNode(!0),n=t.querySelector("div");n.id="dayButton"+e.dayNumber,t.querySelector(".p--weekday").textContent=e.dayOfWeek,t.querySelector(".p--date").textContent=e.dayDateNumber,1===e.dayNumber&&n.classList.add("current"),d.appendChild(t)},m=function(e,t,n){},p=function(e,t){var n=t.length;t.length>0&&document.documentElement.style.setProperty("--colNum",n),t.map(function(e){var t=c.cloneNode(!0);t.querySelector(".column--stage").id="column"+e.replace(/\s/g,""),t.querySelector(".p--stagetitle").textContent=e,o.appendChild(t)}),y(e,t)},y=function(e,t){var n=s.filter(function(t){return t.sessionDate===e[0].date});console.log(n),t.map(function(e){var t=n.filter(function(t){return t.sessionStage===e});g(e,t)})},g=function(e,t){t.map(function(e){var t=e.sessionID,n=e.sessionTitle,o=e.sessionDescription,r=e.sessionSpeakers,s=e.sessionDate,a=e.sessionStartTime,c=e.sessionEndTime,u=e.sessionStage,l=e.sessionTags,d=e.isBreak,f=i.cloneNode(!0);f.querySelector(".session--item").id=t,f.querySelector(".session--title").textContent=n,f.querySelector(".session--description").textContent=o,f.querySelector(".session--duration").textContent=S(s,a,c),d||(r.length>0&&r.map(function(e){var t=v(e);f.querySelector(".session--speakers").appendChild(t)}),l.length>0&&l.map(function(e){var t=document.createElement("div");t.classList.add("session--styletag"),t.innerHTML=e,f.querySelector(".session--tags").appendChild(t)}));var m="#column"+u.replace(/\s/g,"");document.querySelector(m).appendChild(f)})},v=function(e){var t=r.find(function(t){return t.speakerName===e}),n=document.createElement("img");return n.src=t.speakerImgURL,n.classList.add("session--avatar"),n},S=function(e,t,n){var o=new Date("".concat(e,", ").concat(t)),r=new Date("".concat(e,", ").concat(n)),s=Math.floor((r-o)/6e4),a=Math.floor(s/60),c=s-60*a;return"".concat(a,"h").concat(c,"m")}}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/program.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/js/program.js":
+/*!***************************!*\
+  !*** ./src/js/program.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar programGrid = document.querySelector('.program--grid');\nvar speakers = [];\nvar programSettings = [];\nvar eventSessions = []; //templates\n\nvar daysButtonTemplate = document.querySelector('#daysButtonTemplate').content;\nvar stageColumnTemplate = document.querySelector('#stageColumnTemplate').content;\nvar sessionCardTemplate = document.querySelector('#sessionCardTemplate').content;\n\nwindow.onload = function () {\n  //get all programSettings from JSON\n  fetch('/src/js/programSettings.json').then(function (res) {\n    return res.json();\n  }).then(function (programData) {\n    programSettings = programData;\n    fetchEventSessions(programSettings);\n  });\n  fetch('/src/js/speakers.json').then(function (res) {\n    return res.json();\n  }).then(function (speakerData) {\n    speakers = speakerData;\n  });\n};\n\nvar fetchEventSessions = function fetchEventSessions(_ref) {\n  var eventID = _ref.eventID,\n      eventDays = _ref.eventDays,\n      eventStages = _ref.eventStages;\n  // get the right program sessions for this event\n  fetch('/src/js/programSessions2.json').then(function (res) {\n    return res.json();\n  }).then(function (programSessions) {\n    var eventProgram = programSessions.find(function (event) {\n      return event.eventID === eventID;\n    });\n    eventSessions = eventProgram.eventSessions;\n    console.log(eventSessions);\n\n    if (eventSessions.length > 0) {\n      constructDaysBar(eventDays);\n      constructStageColumns(eventDays, eventStages);\n    }\n  });\n};\n\nvar constructDaysBar = function constructDaysBar(eventDays) {\n  eventDays.map(function (day, index) {\n    var dayNumber = index + 1;\n    var dayStart = new Date(\"\".concat(day.date, \", \").concat(day.startTime)); //convert to UTC format\n\n    var dayEnd = new Date(\"\".concat(day.date, \", \").concat(day.endTime));\n    var dayDurationHours = (dayEnd.getTime() - dayStart.getTime()) / (1000 * 3600); //number of sections to create vertical timeline\n\n    var dayDateNumber = dayStart.getDate();\n    var abbrOptions = {\n      weekday: 'short'\n    };\n    var dayOfWeek = new Intl.DateTimeFormat('en-US', abbrOptions).format(dayStart);\n    var dayData = {\n      dayNumber: dayNumber,\n      dayDateNumber: dayDateNumber,\n      dayOfWeek: dayOfWeek\n    };\n    createDaysButton(dayData);\n  });\n  constructTimeline();\n};\n\nvar daysBar = document.querySelector('.navbar--days'); // create button for each day and append to .navbar--days\n\nvar createDaysButton = function createDaysButton(dayData) {\n  var dayButtonCopy = daysButtonTemplate.cloneNode(true);\n  var dayButtonDiv = dayButtonCopy.querySelector('div');\n  dayButtonDiv.id = 'dayButton' + dayData.dayNumber;\n  dayButtonCopy.querySelector('.p--weekday').textContent = dayData.dayOfWeek;\n  dayButtonCopy.querySelector('.p--date').textContent = dayData.dayDateNumber; //default current tab set to day 1\n\n  if (dayData.dayNumber === 1) {\n    dayButtonDiv.classList.add('current');\n  }\n\n  daysBar.appendChild(dayButtonCopy);\n}; // STILL TO DO: CALCULATE HEIGHT TIMELINE\n\n\nvar constructTimeline = function constructTimeline(dayStart, dayEnd, dayDurationHours) {};\n\nvar constructStageColumns = function constructStageColumns(eventDays, eventStages) {\n  var columnNumber = eventStages.length; // set sass variable of column numbers in grid\n\n  if (eventStages.length > 0) {\n    document.documentElement.style.setProperty('--colNum', columnNumber);\n  } //grab template\n\n\n  eventStages.map(function (stage) {\n    var stageColumnCopy = stageColumnTemplate.cloneNode(true);\n    var columnDiv = stageColumnCopy.querySelector('.column--stage');\n    columnDiv.id = 'column' + stage.replace(/\\s/g, '');\n    stageColumnCopy.querySelector('.p--stagetitle').textContent = stage;\n    programGrid.appendChild(stageColumnCopy); //for each stage display sessions\n  });\n  prepareColumnData(eventDays, eventStages);\n};\n\nvar prepareColumnData = function prepareColumnData(eventDays, eventStages) {\n  var sessionsFirstDay = eventSessions.filter(function (session) {\n    return session.sessionDate === eventDays[0].date;\n  });\n  console.log(sessionsFirstDay);\n  eventStages.map(function (stage) {\n    var sessionsByStage = sessionsFirstDay.filter(function (session) {\n      return session.sessionStage === stage;\n    }); // for each stage append session items\n\n    displaySessionsByStage(stage, sessionsByStage);\n  });\n};\n\nvar displaySessionsByStage = function displaySessionsByStage(stage, sessionsByStage) {\n  sessionsByStage.map(function (_ref2) {\n    var sessionID = _ref2.sessionID,\n        sessionTitle = _ref2.sessionTitle,\n        sessionDescription = _ref2.sessionDescription,\n        sessionSpeakers = _ref2.sessionSpeakers,\n        sessionDate = _ref2.sessionDate,\n        sessionStartTime = _ref2.sessionStartTime,\n        sessionEndTime = _ref2.sessionEndTime,\n        sessionStage = _ref2.sessionStage,\n        sessionTags = _ref2.sessionTags,\n        isBreak = _ref2.isBreak;\n    var sessionCardCopy = sessionCardTemplate.cloneNode(true);\n    var sessionItem = sessionCardCopy.querySelector('.session--item');\n    sessionItem.id = sessionID; // add session content\n\n    sessionCardCopy.querySelector('.session--title').textContent = sessionTitle;\n    sessionCardCopy.querySelector('.session--description').textContent = sessionDescription;\n    sessionCardCopy.querySelector('.session--duration').textContent = calculateSessionDuration(sessionDate, sessionStartTime, sessionEndTime);\n\n    if (!isBreak) {\n      // if there are speakers - for each speaker create avatar\n      sessionSpeakers.length > 0 && sessionSpeakers.map(function (sessionSpeaker) {\n        var speakerImg = createSpeakerAvatar(sessionSpeaker);\n        var speakerDiv = sessionCardCopy.querySelector('.session--speakers');\n        speakerDiv.appendChild(speakerImg);\n      }); // for each session tag add tag\n\n      sessionTags.length > 0 && sessionTags.map(function (sessionTag) {\n        var newTag = document.createElement('div');\n        newTag.classList.add('session--styletag');\n        newTag.innerHTML = sessionTag;\n        var tagsDiv = sessionCardCopy.querySelector('.session--tags');\n        tagsDiv.appendChild(newTag);\n      });\n    }\n\n    var parentID = '#column' + sessionStage.replace(/\\s/g, '');\n    var parentColumn = document.querySelector(parentID);\n    parentColumn.appendChild(sessionCardCopy);\n  });\n};\n\nvar createSpeakerAvatar = function createSpeakerAvatar(sessionSpeaker) {\n  var speakerData = speakers.find(function (speakerObj) {\n    return speakerObj.speakerName === sessionSpeaker;\n  });\n  var speakerAvatar = document.createElement('img');\n  speakerAvatar.src = speakerData.speakerImgURL;\n  speakerAvatar.classList.add('session--avatar');\n  return speakerAvatar;\n};\n\nvar calculateSessionDuration = function calculateSessionDuration(dayDate, startTime, endTime) {\n  var sessionStart = new Date(\"\".concat(dayDate, \", \").concat(startTime)); //convert to UTC format\n\n  var sessionEnd = new Date(\"\".concat(dayDate, \", \").concat(endTime));\n  var totalMins = Math.floor((sessionEnd - sessionStart) / 60000);\n  var durationHrs = Math.floor(totalMins / 60);\n  var durationMin = totalMins - durationHrs * 60;\n  return \"\".concat(durationHrs, \"h\").concat(durationMin, \"m\");\n};\n\n//# sourceURL=webpack:///./src/js/program.js?");
+
+/***/ })
+
+/******/ });
