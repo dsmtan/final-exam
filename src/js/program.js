@@ -86,6 +86,7 @@ const createDaysButton = dayData => {
   daysBar.appendChild(dayButtonCopy);
 };
 
+// STILL TO DO: CALCULATE HEIGHT TIMELINE
 const constructTimeline = (dayStart, dayEnd, dayDurationHours) => {};
 
 const constructStageColumns = (eventDays, eventStages) => {
@@ -205,8 +206,3 @@ const calculateSessionDuration = (dayDate, startTime, endTime) => {
   let durationMin = totalMins - durationHrs * 60;
   return `${durationHrs}h${durationMin}m`;
 };
-
-// render fixed timeline column in grid
-
-// create grid column for each stage api: programSettings/eventStages array
-// for each column, map through all sessions and filter by stage, create a grid item for each.
