@@ -1,5 +1,4 @@
 'use strict';
-
 let programGrid = document.querySelector('.program--grid');
 let speakers = [];
 let programSettings = [];
@@ -15,35 +14,38 @@ const sessionCardTemplate = document.querySelector('#sessionCardTemplate')
 
 window.onload = function() {
   //get all programSettings from JSON
-  fetch('/src/js/programSettings.json')
-    .then(res => res.json())
-    .then(programData => {
-      programSettings = programData;
-      fetchEventSessions(programSettings);
-    });
+  import(
+    /* webpackChunkName: "json/programSettings" */
+    './json/programSettings.json'
+  ).then(({ default: programData }) => {
+    programSettings = programData;
+    fetchEventSessions(programSettings);
+  });
 
-  fetch('/src/js/speakers.json')
-    .then(res => res.json())
-    .then(speakerData => {
-      speakers = speakerData;
-    });
+  import(
+    /* webpackChunkName: "json/speakers" */
+    './json/speakers.json'
+  ).then(({ default: speakerData }) => {
+    speakers = speakerData;
+  });
 };
 
 const fetchEventSessions = ({ eventID, eventDays, eventStages }) => {
   // get the right program sessions for this event
-  fetch('/src/js/programSessions2.json')
-    .then(res => res.json())
-    .then(programSessions => {
-      const eventProgram = programSessions.find(
-        event => event.eventID === eventID
-      );
-      eventSessions = eventProgram.eventSessions;
-      console.log(eventSessions);
-      if (eventSessions.length > 0) {
-        constructDaysBar(eventDays);
-        constructStageColumns(eventDays, eventStages);
-      }
-    });
+  import(
+    /* webpackChunkName: "json/programSessions" */
+    './json/programSessions.json'
+  ).then(({ default: programSessions }) => {
+    const eventProgram = programSessions.find(
+      event => event.eventID === eventID
+    );
+    eventSessions = eventProgram.eventSessions;
+    console.log(eventSessions);
+    if (eventSessions.length > 0) {
+      constructDaysBar(eventDays);
+      constructStageColumns(eventDays, eventStages);
+    }
+  });
 };
 
 const constructDaysBar = eventDays => {

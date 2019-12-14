@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -16,6 +17,7 @@ module.exports = {
   module: {
     rules: [
       {
+        type: 'javascript/auto',
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
@@ -90,5 +92,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'bundle.css',
     }),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/images',
+        to: 'images',
+      },
+    ]),
   ],
 };
