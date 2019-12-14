@@ -7,6 +7,7 @@ module.exports = {
   entry: {
     index: './src/js/index.js',
     program: './src/js/program.js',
+    sessionCard: './src/js/sessionCard.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
