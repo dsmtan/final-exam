@@ -12,7 +12,7 @@
         "sessionEndTime": "10:30",
         "sessionStage": "Main Stage",
         "sessionTags": [],
-        "isBreak": false
+        "isBreak": true
       },
       {
         "sessionID": "sess1001",
@@ -52,7 +52,7 @@
         "sessionStartTime": "11:15",
         "sessionEndTime": "12:15",
         "sessionStage": "Panel Stage",
-        "sessionTags": ["UX design", "Marketing", "Graphic design"],
+        "sessionTags": ["UX design", "Graphic design"],
         "isBreak": false
       },
       {
@@ -134,14 +134,14 @@
       },
       {
         "sessionID": "sess1009",
-        "sessionTitle": "Feed the users' curiosity",
-        "sessionDescription": "Mira Schleier talks about how to feed the ' by creating good content with her background as a digital designer, PR specialist and now creative producer Mira will get you all the insight on what user behaviour when it comes to content.",
+        "sessionTitle": "Feed the user's curiosity",
+        "sessionDescription": "Mira Schleier talks about how to feed the user's curiosity by creating good content with her background as a digital designer, PR specialist and now creative producer Mira will get you all the insight on what user behaviour when it comes to content.",
         "sessionSpeakers": ["Mira Schleier"],
         "sessionDate": "01-17-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
         "sessionStage": "Inspiration Stage",
-        "sessionTags": ["Graphic design", "Marketing", "Social media"],
+        "sessionTags": ["Marketing", "Social media"],
         "isBreak": false
       },
       {
@@ -182,7 +182,7 @@
         "sessionStartTime": "15:00",
         "sessionEndTime": "16:30",
         "sessionStage": "Panel Stage",
-        "sessionTags": ["Business", "Development", "UX design"],
+        "sessionTags": ["Development", "UX design"],
         "isBreak": false
       },
       {
@@ -275,7 +275,7 @@
         "sessionDescription": "Go grab some lunch or coffee",
         "sessionSpeakers": [],
         "sessionDate": "01-18-2020",
-        "sessionStartTime": "12:15",
+        "sessionStartTime": "12:00",
         "sessionEndTime": "13:00",
         "sessionStage": "Inspiration Stage",
         "sessionTags": [],
@@ -295,7 +295,7 @@
       },
       {
         "sessionID": "sess1022",
-        "sessionTitle": "Panel Discrussion: Collaborating within different field of work",
+        "sessionTitle": "Panel Discussion: Collaborating within different field of work",
         "sessionDescription": "Go on a journey with four different people from different work fields, discussing why it is so important to be able to collaborate across different work field, and what difference it makes.",
         "sessionSpeakers": [
           "Andrew Nelson",
@@ -307,19 +307,19 @@
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:30",
         "sessionStage": "Panel Stage",
-        "sessionTags": ["Development", "Product design", "Marketing"],
+        "sessionTags": ["Development", "Product design"],
         "isBreak": false
       },
       {
         "sessionID": "sess1023",
-        "sessionTitle": "Feed the users' curiosity",
-        "sessionDescription": "Mira Schleier talks about how to feed the ' by creating good content with her background as a digital designer, PR specialist and now creative producer Mira will get you all the insight on what user behaviour when it comes to content.",
+        "sessionTitle": "Feed the user's curiosity",
+        "sessionDescription": "Mira Schleier talks about how to feed the user's curiosity by creating good content with her background as a digital designer, PR specialist and now creative producer Mira will get you all the insight on what user behaviour when it comes to content.",
         "sessionSpeakers": ["Mira Schleier"],
         "sessionDate": "01-18-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
         "sessionStage": "Inspiration Stage",
-        "sessionTags": ["Graphic design", "Marketing", "Social media"],
+        "sessionTags": ["Marketing", "Social media"],
         "isBreak": false
       },
       {
@@ -468,7 +468,7 @@
       },
       {
         "sessionID": "sess1036",
-        "sessionTitle": "Panel Discrussion: Collaborating with different fields",
+        "sessionTitle": "Panel Discussion: Collaborating with different fields",
         "sessionDescription": "Go on a journey with four different people from different work fields, discussing why it is so important to be able to collaborate across different work field, and what difference it makes.",
         "sessionSpeakers": [
           "Andrew Nelson",
@@ -480,19 +480,19 @@
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:30",
         "sessionStage": "Panel Stage",
-        "sessionTags": ["Development", "Product design", "Marketing"],
+        "sessionTags": ["Development", "Product design"],
         "isBreak": false
       },
       {
         "sessionID": "sess1037",
-        "sessionTitle": "Feed the users' curiosity",
-        "sessionDescription": "Mira Schleier talks about how to feed the ' by creating good content with her background as a digital designer, PR specialist and now creative producer Mira will get you all the insight on what user behaviour when it comes to content.",
+        "sessionTitle": "Feed the user's curiosity",
+        "sessionDescription": "Mira Schleier talks about how to feed the user's curiosity by creating good content with her background as a digital designer, PR specialist and now creative producer Mira will get you all the insight on what user behaviour when it comes to content.",
         "sessionSpeakers": ["Mira Schleier"],
         "sessionDate": "01-19-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
         "sessionStage": "Inspiration Stage",
-        "sessionTags": ["Graphic design", "Marketing", "Social media"],
+        "sessionTags": ["Marketing", "Social media"],
         "isBreak": false
       },
       {
@@ -541,6 +541,18 @@
         "sessionEndTime": "18:00",
         "sessionStage": "Main Stage",
         "sessionTags": ["Networking"],
+        "isBreak": false
+      },
+      {
+        "sessionID": "sess1043",
+        "sessionTitle": "Workshop: 3D animations in JavaScript",
+        "sessionDescription": "Jane Watt will teach you the basics of rendering 3D animations in JavaScript.",
+        "sessionSpeakers": ["Jane Watt"],
+        "sessionDate": "01-17-2020",
+        "sessionStartTime": "09:00",
+        "sessionEndTime": "12:00",
+        "sessionStage": "Inspiration Stage",
+        "sessionTags": ["Development"],
         "isBreak": false
       }
     ]

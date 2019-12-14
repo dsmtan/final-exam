@@ -3,6 +3,10 @@ let programGrid = document.querySelector('.program--grid');
 let speakers = [];
 let programSettings = [];
 let eventSessions = [];
+let favouriteList =
+  localStorage.getItem('favouriteList') === null
+    ? []
+    : localStorage.getItem('favouriteList');
 
 //templates
 const daysButtonTemplate = document.querySelector('#daysButtonTemplate')
@@ -12,8 +16,11 @@ const stageColumnTemplate = document.querySelector('#stageColumnTemplate')
 const sessionCardTemplate = document.querySelector('#sessionCardTemplate')
   .content;
 
+// init
 window.onload = function() {
-  //get all programSettings from JSON
+  localStorage.clear(); // for dev purposes in prod it will remember
+
+  // fetch programSettings and speakers data
   import(
     /* webpackChunkName: "json/programSettings" */
     './json/programSettings.json'
@@ -122,72 +129,78 @@ const prepareColumnData = (eventDays, eventStages) => {
       session => session.sessionStage === stage
     );
     // for each stage append session items
-    displaySessionsByStage(stage, sessionsByStage);
+    displaySessionsByStage(sessionsByStage);
   });
 };
 
-const displaySessionsByStage = (stage, sessionsByStage) => {
-  sessionsByStage.map(
-    ({
-      sessionID,
-      sessionTitle,
-      sessionDescription,
-      sessionSpeakers,
-      sessionDate,
-      sessionStartTime,
-      sessionEndTime,
-      sessionStage,
-      sessionTags,
-      isBreak,
-    }) => {
-      const sessionCardCopy = sessionCardTemplate.cloneNode(true);
-      let sessionItem = sessionCardCopy.querySelector('.session--item');
-      sessionItem.id = sessionID;
-
-      // add session content
-      sessionCardCopy.querySelector(
-        '.session--title'
-      ).textContent = sessionTitle;
-      sessionCardCopy.querySelector(
-        '.session--description'
-      ).textContent = sessionDescription;
-
-      sessionCardCopy.querySelector(
-        '.session--duration'
-      ).textContent = calculateSessionDuration(
-        sessionDate,
-        sessionStartTime,
-        sessionEndTime
-      );
-
-      if (!isBreak) {
-        // if there are speakers - for each speaker create avatar
-        sessionSpeakers.length > 0 &&
-          sessionSpeakers.map(sessionSpeaker => {
-            const speakerImg = createSpeakerAvatar(sessionSpeaker);
-            const speakerDiv = sessionCardCopy.querySelector(
-              '.session--speakers'
-            );
-            speakerDiv.appendChild(speakerImg);
-          });
-
-        // for each session tag add tag
-        sessionTags.length > 0 &&
-          sessionTags.map(sessionTag => {
-            const newTag = document.createElement('div');
-            newTag.classList.add('session--styletag');
-            newTag.innerHTML = sessionTag;
-            const tagsDiv = sessionCardCopy.querySelector('.session--tags');
-            tagsDiv.appendChild(newTag);
-          });
-      }
-
-      const parentID = '#column' + sessionStage.replace(/\s/g, '');
-      const parentColumn = document.querySelector(parentID);
-
-      parentColumn.appendChild(sessionCardCopy);
+const displaySessionsByStage = sessionsByStage => {
+  const sortedSessions = sessionsByStage.sort((a, b) => {
+    if (a.sessionStartTime < b.sessionStartTime) {
+      return -1;
+    } else {
+      return 1;
     }
+  });
+  console.log(sortedSessions);
+  sortedSessions.map(session => createSessionCards(session));
+};
+
+const sortList = array => {};
+
+const createSessionCards = ({
+  sessionID,
+  sessionTitle,
+  sessionDescription,
+  sessionSpeakers,
+  sessionDate,
+  sessionStartTime,
+  sessionEndTime,
+  sessionStage,
+  sessionTags,
+  isBreak,
+}) => {
+  const sessionCardCopy = sessionCardTemplate.cloneNode(true);
+  let sessionItem = sessionCardCopy.querySelector('.session--item');
+  sessionItem.id = sessionID;
+
+  // add session content
+  sessionCardCopy.querySelector('.session--title').textContent = sessionTitle;
+  sessionCardCopy.querySelector(
+    '.session--description'
+  ).textContent = sessionDescription;
+
+  const durationDiv = sessionCardCopy.querySelector('.session--duration');
+  durationDiv.textContent = calculateSessionDuration(
+    sessionDate,
+    sessionStartTime,
+    sessionEndTime
   );
+
+  if (!isBreak) {
+    durationDiv.style.marginTop = '18px';
+    // if there are speakers - for each speaker create avatar
+    sessionSpeakers.length > 0 &&
+      sessionSpeakers.map(sessionSpeaker => {
+        const speakerImg = createSpeakerAvatar(sessionSpeaker);
+        const speakerDiv = sessionCardCopy.querySelector('.session--speakers');
+        speakerDiv.appendChild(speakerImg);
+      });
+
+    // for each session tag add tag
+    sessionTags.length > 0 &&
+      sessionTags.map(sessionTag => {
+        const newTag = document.createElement('div');
+        newTag.classList.add('session--styletag');
+        newTag.innerHTML = sessionTag;
+        const tagsDiv = sessionCardCopy.querySelector('.session--tags');
+        tagsDiv.appendChild(newTag);
+      });
+  }
+
+  const parentID = '#column' + sessionStage.replace(/\s/g, '');
+  const parentColumn = document.querySelector(parentID);
+
+  parentColumn.appendChild(sessionCardCopy);
 };
 
 const createSpeakerAvatar = sessionSpeaker => {
@@ -207,4 +220,35 @@ const calculateSessionDuration = (dayDate, startTime, endTime) => {
   let durationHrs = Math.floor(totalMins / 60);
   let durationMin = totalMins - durationHrs * 60;
   return `${durationHrs}h${durationMin}m`;
+};
+
+// EVENT LISTENERS
+
+document.addEventListener('click', function(event) {
+  if (event.target.id === 'button--favouritelist') {
+    showFavouriteList();
+  }
+  if (event.target.classList.contains('icon--heartoutline')) {
+    addToFavouriteList(event.target);
+  }
+});
+
+const showFavouriteList = () => {
+  programGrid.innerHTML = '';
+
+  const favouriteSessions = favouriteList.map(favourite =>
+    eventSessions.find(session => session.sessionID === favourite)
+  );
+  console.log(favouriteList);
+  console.log(favouriteSessions);
+
+  // replace programGrid entire innerHTML string
+  // add class grid--favouriteList to program--grid
+};
+
+const addToFavouriteList = e => {
+  const addedSession = e.parentNode.id;
+  e.src = './images/heart_solid.svg';
+  favouriteList.push(addedSession);
+  localStorage.setItem('favouriteList', favouriteList);
 };

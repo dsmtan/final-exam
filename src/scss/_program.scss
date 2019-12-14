@@ -94,14 +94,19 @@
 .program--grid {
   position: relative;
   background-color: $tameLightGrey;
-  min-width: 100%;
+  width: 100%;
   height: calc(100vh - 135px);
   max-height: 100vh;
   display: grid;
-  grid-template-columns: 42px repeat(var(--colNum), 78vw);
+  grid-template-columns: 42px repeat(var(--colNum), 85vw);
   grid-gap: 0px;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
+  scroll-padding-left: 42px;
+
+  &.grid--favouritelist {
+    grid-template-columns: 90vw;
+  }
 }
 
 .column--timeline {
@@ -110,6 +115,10 @@
   text-align: center;
   padding-top: 35px;
   scroll-snap-align: start;
+  position: sticky;
+  left: 0px;
+  background-color: $tameLightGrey;
+  z-index: 10;
 
   p {
     margin: 0 0 12em 0;
@@ -120,6 +129,7 @@
   scroll-snap-align: start;
   padding-left: 2px;
   padding-right: 10px;
+  z-index: 5;
 
   .p--stagetitle {
     height: 35px;
@@ -171,7 +181,7 @@
     height: 25px;
     width: 25px;
     border-radius: 50%;
-    margin-right: 1px;
+    margin-right: 2px;
   }
 
   .session--duration {
@@ -179,6 +189,7 @@
     width: 45px;
     color: $tameGrey;
     font-size: 0.8em;
+    margin-top: 5px;
   }
 
   .session--tags {
