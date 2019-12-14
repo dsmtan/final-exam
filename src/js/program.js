@@ -7,6 +7,7 @@ let favouriteList =
   localStorage.getItem('favouriteList') === null
     ? []
     : localStorage.getItem('favouriteList');
+let favouriteClicked = false;
 
 //templates
 const daysButtonTemplate = document.querySelector('#daysButtonTemplate')
@@ -106,23 +107,24 @@ const constructStageColumns = (eventDays, eventStages) => {
   }
 
   //grab template
-  eventStages.map(stage => {
-    const stageColumnCopy = stageColumnTemplate.cloneNode(true);
-    let columnDiv = stageColumnCopy.querySelector('.column--stage');
-    columnDiv.id = 'column' + stage.replace(/\s/g, '');
-    stageColumnCopy.querySelector('.p--stagetitle').textContent = stage;
-    programGrid.appendChild(stageColumnCopy);
-
-    //for each stage display sessions
-  });
+  eventStages.map(stage => fillColumnTemplate(stage));
   prepareColumnData(eventDays, eventStages);
 };
 
+const fillColumnTemplate = stageName => {
+  const stageColumnCopy = stageColumnTemplate.cloneNode(true);
+  let columnDiv = stageColumnCopy.querySelector('.column--stage');
+  columnDiv.id = 'column' + stageName.replace(/\s/g, '');
+  stageColumnCopy.querySelector('.p--stagetitle').textContent =
+    stageName !== 'Favourites' ? stageName : 'Your Favourites';
+  programGrid.appendChild(stageColumnCopy);
+};
+
 const prepareColumnData = (eventDays, eventStages) => {
+  // default shows first day of event
   const sessionsFirstDay = eventSessions.filter(
     session => session.sessionDate === eventDays[0].date
   );
-  console.log(sessionsFirstDay);
 
   eventStages.map(stage => {
     const sessionsByStage = sessionsFirstDay.filter(
@@ -144,8 +146,6 @@ const displaySessionsByStage = sessionsByStage => {
   console.log(sortedSessions);
   sortedSessions.map(session => createSessionCards(session));
 };
-
-const sortList = array => {};
 
 const createSessionCards = ({
   sessionID,
@@ -197,7 +197,14 @@ const createSessionCards = ({
       });
   }
 
-  const parentID = '#column' + sessionStage.replace(/\s/g, '');
+  if (favouriteClicked) {
+    const heartIcon = sessionCardCopy.querySelector('.icon--heartoutline');
+    heartIcon.src = './images/heart_solid.svg';
+    heartIcon.removeEventListener('click', addToFavouriteList, true);
+  }
+
+  const parentName = favouriteClicked ? 'Favourites' : sessionStage;
+  const parentID = '#column' + parentName.replace(/\s/g, '');
   const parentColumn = document.querySelector(parentID);
 
   parentColumn.appendChild(sessionCardCopy);
@@ -235,10 +242,14 @@ document.addEventListener('click', function(event) {
 
 const showFavouriteList = () => {
   programGrid.innerHTML = '';
+  programGrid.classList.add('grid--favouriteList');
+  fillColumnTemplate('Favourites');
 
+  favouriteClicked = true;
   const favouriteSessions = favouriteList.map(favourite =>
     eventSessions.find(session => session.sessionID === favourite)
   );
+  displaySessionsByStage(favouriteSessions);
   console.log(favouriteList);
   console.log(favouriteSessions);
 

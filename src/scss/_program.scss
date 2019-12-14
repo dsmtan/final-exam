@@ -105,7 +105,8 @@
   scroll-padding-left: 42px;
 
   &.grid--favouritelist {
-    grid-template-columns: 90vw;
+    grid-template-columns: 92vw;
+    padding: 0 4vw;
   }
 }
 
@@ -140,6 +141,10 @@
     font-size: 0.8em;
     text-transform: uppercase;
   }
+}
+
+#columnFavourites {
+  padding-right: 0;
 }
 
 .session--item {
