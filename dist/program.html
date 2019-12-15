@@ -17,28 +17,33 @@
       <div class="bottombar--filterdrawer"></div>
 
       <div class="program--grid">
-        <div class="column--timeline">
-          <p>10:00</p>
-          <p>11:00</p>
-          <p>12:00</p>
-          <p>13:00</p>
-          <p>14:00</p>
-          <p>15:00</p>
-          <p>16:00</p>
-          <p>17:00</p>
-          <p>18:00</p>
-        </div>
-        <!-- add stage columns and program sessions dynamically -->
+        <!-- add timeline, stage columns and program sessions dynamically -->
       </div>
+      <div class="filterdrawer--mobile"><p class="p--filterdrawer">Filters</p</div>
+      <div class="filtersidebar hide"></div>
     </main>
 
+    <template id="timelineTemplate">
+      <div class="column--timeline">
+        <p>10:00</p>
+        <p>11:00</p>
+        <p>12:00</p>
+        <p>13:00</p>
+        <p>14:00</p>
+        <p>15:00</p>
+        <p>16:00</p>
+        <p>17:00</p>
+        <p>18:00</p>
+      </div>
+    </template>
+
     <template id="daysButtonTemplate">
-      <div class="button--days">
-        <p class="p--weekday">Weekday</p>
-        <p class="p--date">Date</p>
-        <div class="div--daydots">
-          <div class="div--dot"></div>
-          <div class="div--dot dot2"></div>
+      <div class="button--days selectDay">
+        <p class="p--weekday selectDay">Weekday</p>
+        <p class="p--date selectDay">Date</p>
+        <div class="div--daydots selectDay">
+          <!-- <div class="div--dot"></div>
+          <div class="div--dot dot2"></div> -->
         </div>
         <!-- add dynamically depending on tags -->
       </div>

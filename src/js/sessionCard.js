@@ -15,7 +15,8 @@ const createSessionCards = (
     isBreak,
   },
   speakers,
-  favouriteClicked,
+  favouriteList,
+  favouriteListClicked,
   addToFavouriteList,
   removeFromFavouriteList
 ) => {
@@ -32,7 +33,7 @@ const createSessionCards = (
   const durationDiv = sessionCardCopy.querySelector('.session--duration');
   const heartIcon = sessionCardCopy.querySelector('.icon--heartoutline');
 
-  if (favouriteClicked) {
+  if (favouriteListClicked) {
     durationDiv.style.width = '100%';
     const utcDate = new Date(sessionDate);
     const options = {
@@ -43,7 +44,7 @@ const createSessionCards = (
     const stringDate = new Intl.DateTimeFormat('en-GB', options).format(
       utcDate
     );
-    console.log(stringDate);
+
     durationDiv.innerHTML = `${sessionStage.toUpperCase()} &nbsp;&nbsp;|&nbsp;&nbsp; ${stringDate} ${sessionStartTime} - ${sessionEndTime}`;
     heartIcon.src = './images/heart_solid.svg';
     heartIcon.addEventListener('click', e => {
@@ -55,6 +56,7 @@ const createSessionCards = (
       sessionStartTime,
       sessionEndTime
     );
+
     heartIcon.addEventListener('click', e => {
       addToFavouriteList(e.target);
     });
@@ -82,7 +84,7 @@ const createSessionCards = (
       });
   }
 
-  const parentName = favouriteClicked ? 'Favourites' : sessionStage;
+  const parentName = favouriteListClicked ? 'Favourites' : sessionStage;
   const parentID = '#column' + parentName.replace(/\s/g, '');
   const parentColumn = document.querySelector(parentID);
 

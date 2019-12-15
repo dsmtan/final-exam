@@ -6,13 +6,14 @@ let speakers = [];
 let programSettings = [];
 let eventSessions = [];
 let favouriteList = [];
-let favouriteClicked = false;
+let favouriteListClicked = false;
 
 //templates
 const daysButtonTemplate = document.querySelector('#daysButtonTemplate')
   .content;
 const stageColumnTemplate = document.querySelector('#stageColumnTemplate')
   .content;
+const timelineTemplate = document.querySelector('#timelineTemplate').content;
 
 // init
 window.onload = function() {
@@ -58,11 +59,46 @@ const fetchEventSessions = ({ eventID, eventDays, eventStages }) => {
 };
 
 // EVENT HANDLERS
+
+const showSelectedDay = e => {
+  favouriteListClicked = false;
+  programGrid.classList.remove('grid--favouriteList');
+  const previousSelected = document.querySelector('.current');
+  previousSelected && previousSelected.classList.remove('current');
+  //add classlist current
+  let dayButton;
+  if (e.target.classList.contains('button--days')) {
+    dayButton = e.target;
+  } else {
+    dayButton = event.target.parentNode;
+  }
+
+  dayButton.classList.add('current');
+  const selectedDayNumber = dayButton.id.charAt(dayButton.id.length - 1);
+
+  // clear grid from previous data and re-render
+  programGrid.innerHTML = '';
+  constructTimeline();
+  constructStageColumns(
+    programSettings.eventDays,
+    programSettings.eventStages,
+    selectedDayNumber
+  );
+};
+
 // -- favouriteList
 const addToFavouriteList = e => {
   const addedSession = e.parentNode.id;
   e.src = './images/heart_solid.svg';
-  favouriteList.push(addedSession);
+  // prevent duplicate
+  const alreadySaved = favouriteList.find(session => session === addedSession);
+  if (alreadySaved) {
+    e.src = './images/heart.svg';
+    let index = favouriteList.indexOf(addedSession);
+    index > -1 && favouriteList.splice(index, 1);
+  } else {
+    favouriteList.push(addedSession);
+  }
   localStorage.setItem('favouriteList', JSON.stringify(favouriteList));
   console.log(favouriteList);
 };
@@ -77,23 +113,13 @@ const removeFromFavouriteList = e => {
 };
 
 const showFavouriteList = () => {
-  const selectedDay = document.querySelector('.current');
-  selectedDay && selectedDay.classList.remove('current');
+  const currentDay = document.querySelector('.current');
+  currentDay && currentDay.classList.remove('current');
   programGrid.innerHTML = '';
   programGrid.classList.add('grid--favouriteList');
-  fillColumnTemplate('Favourites');
 
-  favouriteClicked = true;
-  const favouriteSessions =
-    favouriteList &&
-    favouriteList.map(favourite =>
-      eventSessions.find(session => session.sessionID === favourite)
-    );
-  displaySessionsByStage(favouriteSessions);
-  console.log(favouriteList);
-  console.log(favouriteSessions);
-
-  // remove .current from day bar
+  favouriteListClicked = true;
+  constructStageColumns(programSettings.eventDays, programSettings.eventStages);
 };
 
 // EVENT LISTENERS
@@ -102,18 +128,19 @@ document.addEventListener('click', function(event) {
   if (event.target.id === 'button--favouritelist') {
     showFavouriteList();
   }
-  // if (event.target.classList.contains('icon--heartoutline')) {
-  //   addToFavouriteList(event.target);
-  // }
+  if (event.target.classList.contains('selectDay')) {
+    console.log(event.target);
+    showSelectedDay(event);
+  }
 });
 
 const constructDaysBar = eventDays => {
+  let dayDurationHours = 0;
   eventDays.map((day, index) => {
     let dayNumber = index + 1;
     let dayStart = new Date(`${day.date}, ${day.startTime}`); //convert to UTC format
     let dayEnd = new Date(`${day.date}, ${day.endTime}`);
-    let dayDurationHours =
-      (dayEnd.getTime() - dayStart.getTime()) / (1000 * 3600); //number of sections to create vertical timeline
+    dayDurationHours = (dayEnd.getTime() - dayStart.getTime()) / (1000 * 3600); //number of sections to create vertical timeline
 
     let dayDateNumber = dayStart.getDate();
     const abbrOptions = { weekday: 'short' };
@@ -127,7 +154,7 @@ const constructDaysBar = eventDays => {
     };
     createDaysButton(dayData);
   });
-  // constructTimeline(dayDurationHours);
+  constructTimeline(dayDurationHours);
 };
 
 const daysBar = document.querySelector('.navbar--days');
@@ -148,18 +175,28 @@ const createDaysButton = dayData => {
 };
 
 // STILL TO DO: CALCULATE HEIGHT TIMELINE
-const constructTimeline = (dayStart, dayEnd, dayDurationHours) => {};
+const constructTimeline = (dayStart, dayEnd, dayDurationHours) => {
+  const timelineColumnCopy = timelineTemplate.cloneNode(true);
+  // let timelineDiv = timelineColumnCopy.querySelector('.column--timeline');
+  programGrid.appendChild(timelineColumnCopy);
+};
 
-const constructStageColumns = (eventDays, eventStages) => {
+const constructStageColumns = (eventDays, eventStages, selectedDayNumber) => {
   const columnNumber = eventStages.length;
   // set sass variable of column numbers in grid
   if (eventStages.length > 0) {
     document.documentElement.style.setProperty('--colNum', columnNumber);
   }
+  console.log(favouriteListClicked);
 
-  //grab template
-  eventStages.map(stage => fillColumnTemplate(stage));
-  prepareColumnData(eventDays, eventStages);
+  if (favouriteListClicked) {
+    fillColumnTemplate('Favourites');
+  } else {
+    //grab template
+    eventStages.map(stage => fillColumnTemplate(stage));
+  }
+
+  prepareColumnData(eventDays, eventStages, selectedDayNumber);
 };
 
 const fillColumnTemplate = stageName => {
@@ -171,14 +208,30 @@ const fillColumnTemplate = stageName => {
   programGrid.appendChild(stageColumnCopy);
 };
 
-const prepareColumnData = (eventDays, eventStages) => {
-  // default shows first day of event
-  const sessionsFirstDay = eventSessions.filter(
-    session => session.sessionDate === eventDays[0].date
-  );
+const prepareColumnData = (eventDays, eventStages, selectedDay) => {
+  let selectedSessions = [];
+
+  if (favouriteListClicked) {
+    selectedSessions =
+      favouriteList &&
+      favouriteList.map(favourite =>
+        eventSessions.find(session => session.sessionID === favourite)
+      );
+  } else if (selectedDay > 0) {
+    selectedSessions = eventSessions.filter(
+      session => session.sessionDate === eventDays[selectedDay - 1].date
+    );
+  } else {
+    // default is day 1
+    selectedSessions = eventSessions.filter(
+      session => session.sessionDate === eventDays[0].date
+    );
+  }
+  console.log(favouriteList);
+  console.table(selectedSessions);
 
   eventStages.map(stage => {
-    const sessionsByStage = sessionsFirstDay.filter(
+    const sessionsByStage = selectedSessions.filter(
       session => session.sessionStage === stage
     );
     // for each stage append session items
@@ -194,12 +247,13 @@ const displaySessionsByStage = sessionsByStage => {
       return 1;
     }
   });
-  console.log(sortedSessions);
+
   sortedSessions.map(session =>
     createSessionCards(
       session,
       speakers,
-      favouriteClicked,
+      favouriteList,
+      favouriteListClicked,
       addToFavouriteList,
       removeFromFavouriteList
     )
