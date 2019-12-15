@@ -1,0 +1,113 @@
+.filterdrawer--mobile {
+  display: block;
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  height: 40px;
+  z-index: 50;
+  background-color: white;
+  color: $tameNavy;
+  margin: 0;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0px 0px 2px 1.5px #c4c4c4;
+  transition: height 0.4s ease-out;
+
+  &.filterdrawerOpened {
+    height: calc(100vh - 50px);
+  }
+
+  .p--filterHeader {
+    height: 35px;
+    font-family: $headerFont;
+    color: $tameGrey;
+    font-size: 0.8em;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+    padding: 10px 10px 0;
+  }
+
+  .div--drawercontent {
+    height: calc(100vh - 140px);
+    overflow: scroll;
+  }
+
+  section {
+    width: 85%;
+    margin: 22px auto 10px;
+  }
+
+  h3 {
+    font-family: $headerFont;
+    font-size: 0.9em;
+    margin-top: 0;
+    margin-bottom: 9px;
+  }
+
+  button {
+    display: inline-block;
+    width: calc(50% - 10px);
+    box-shadow: 0.7px 0.7px 3.5px 1px #c4c4c4ad;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    padding: 8px;
+    margin: 5px;
+    font-family: $mainFont;
+    color: $tameNavy;
+    outline: none;
+    font-size: 0.85em;
+    font-weight: 400;
+
+    &.filterClicked {
+      background-color: rgba(255, 138, 138, 0.8);
+    }
+  }
+
+  .button--tags {
+    color: white;
+    background-color: $tameNavy;
+    box-shadow: none;
+    width: auto;
+    padding: 6px 12px;
+    margin: 2px;
+    border-radius: 15px;
+    font-weight: 300;
+  }
+
+  .button--types {
+    border-left: 6px solid $tameNavy;
+  }
+
+  .section--applyreset {
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+    background-color: white;
+    border-top: 1px solid $tameNavy;
+    margin: 0 calc((100vw - 85%) / 2);
+    margin-top: 0;
+    padding-top: 10px;
+    transition: height 0.4s;
+  }
+
+  .button--resetfilters {
+    display: inline-block;
+    box-shadow: none;
+    display: inline-block;
+    width: 42%;
+  }
+
+  .button--apply {
+    background-color: $tameNavy;
+    color: white;
+  }
+}
+
+.img--filtericons {
+  float: left;
+  height: 18px;
+  width: 18px;
+  margin-left: 5px;
+  margin-right: 7px;
+}

@@ -4,8 +4,12 @@ import createSessionCards from './sessionCard.js';
 let programGrid = document.querySelector('.program--grid');
 const daysBar = document.querySelector('.navbar--days');
 const mobileFilterDrawer = document.querySelector('.filterdrawer--mobile');
-const filterdrawerContent = document.querySelector('#filterdrawerContent');
+const filterdrawerContent = document.querySelector('#button--drawerContent');
+const tagFilterSection = document.querySelector('.section--tagfilters');
+const typeFilterSection = document.querySelector('.section--typefilters');
+const timeFilterSection = document.querySelector('.section--timefilters');
 const stageFilterSection = document.querySelector('.section--stagefilters');
+const applyFilterSection = document.querySelector('.section--applyreset');
 
 let speakers = [];
 let programSettings = [];
@@ -45,7 +49,14 @@ window.onload = function() {
   });
 };
 
-const fetchEventSessions = ({ eventID, eventDays, eventStages, eventTags }) => {
+const fetchEventSessions = ({
+  eventID,
+  eventDays,
+  eventStages,
+  eventTags,
+  eventTimeSlots,
+  eventSessionTypes,
+}) => {
   // get the right program sessions for this event
   import(
     /* webpackChunkName: "json/programSessions" */
@@ -58,7 +69,12 @@ const fetchEventSessions = ({ eventID, eventDays, eventStages, eventTags }) => {
     if (eventSessions.length > 0) {
       constructDaysBar(eventDays);
       constructStageColumns(eventDays, eventStages);
-      createFilterdrawerContent(eventTags, eventStages);
+      createFilterdrawerContent(
+        eventTags,
+        eventTimeSlots,
+        eventStages,
+        eventSessionTypes
+      );
     }
   });
 };
@@ -128,9 +144,10 @@ const showFavouriteList = () => {
   constructStageColumns(programSettings.eventDays, programSettings.eventStages);
 };
 
-const openFilterDrawer = event => {
-  mobileFilterDrawer.classList.add('filterdrawerOpened');
-  filterdrawerContent.classList.remove('hide');
+const toggleFilterDrawer = () => {
+  mobileFilterDrawer.classList.toggle('filterdrawerOpened');
+  filterdrawerContent.classList.toggle('hide');
+  applyFilterSection.classList.toggle('hide');
 };
 
 // --------- EVENT LISTENERS ------------- //
@@ -142,18 +159,46 @@ document.addEventListener('click', function(event) {
   if (event.target.classList.contains('selectDay')) {
     showSelectedDay(event);
   }
-  if (event.target.id === 'button--opendrawer') {
-    openFilterDrawer(event);
+  if (event.target.id === 'button--toggledrawer') {
+    toggleFilterDrawer();
   }
 });
 
 // --------- BUILD DYNAMIC LAYOUT ------------- //
 
-const createFilterdrawerContent = (eventTags, eventStages) => {
+const createFilterdrawerContent = (
+  eventTags,
+  eventTimeSlots,
+  eventStages,
+  eventSessionTypes
+) => {
   // eventTags.map( for each tag create a div)
+  eventTags.map(tag => {
+    const newTagButton = document.createElement('button');
+    newTagButton.textContent = tag;
+    newTagButton.classList.add('button--tags');
+    tagFilterSection.appendChild(newTagButton);
+  });
+
+  eventSessionTypes.map(type => {
+    const newTypeButton = document.createElement('button');
+    newTypeButton.classList.add('button--types');
+    newTypeButton.textContent = type.name;
+    newTypeButton.style.borderColor = type.color;
+    typeFilterSection.appendChild(newTypeButton);
+  });
+
+  eventTimeSlots.map(slot => {
+    const newTimeSlotButton = document.createElement('button');
+    newTimeSlotButton.textContent = slot;
+    newTimeSlotButton.classList.add('button--timeslots');
+    timeFilterSection.appendChild(newTimeSlotButton);
+  });
+
   eventStages.map(stage => {
     const newStageButton = document.createElement('button');
     newStageButton.textContent = stage;
+    newStageButton.classList.add('button--stages');
     stageFilterSection.appendChild(newStageButton);
   });
 };

@@ -9,6 +9,7 @@ $colour3: #d6d6d6;
 $tameNavy: #0b304c;
 $tameGrey: #c4c4c4;
 $tameLightGrey: #ededed;
+$tamePink: #ff8a8a;
 
 $mainFont: 'Lato', sans-serif;
 $headerFont: 'Montserrat', sans-serif;
@@ -21,6 +22,7 @@ $headerFont: 'Montserrat', sans-serif;
 
 .hide {
   display: none;
+  height: 0;
 }
 
 * {
