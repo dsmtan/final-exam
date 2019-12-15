@@ -129,7 +129,7 @@
         "sessionStartTime": "13:00",
         "sessionEndTime": "15:00",
         "sessionStage": "Panel Stage",
-        "sessionTags": ["Workshop"],
+        "sessionTags": ["Business"],
         "isBreak": false
       },
       {
@@ -194,7 +194,7 @@
         "sessionStartTime": "16:00",
         "sessionEndTime": "18:00",
         "sessionStage": "Panel Stage",
-        "sessionTags": ["Networking"],
+        "sessionTags": [],
         "isBreak": false
       },
       {
@@ -230,7 +230,7 @@
         "sessionStartTime": "10:30",
         "sessionEndTime": "12:00",
         "sessionStage": "Panel Stage",
-        "sessionTags": ["Workshop", "Development"],
+        "sessionTags": ["Development"],
         "isBreak": false
       },
       {
@@ -352,8 +352,8 @@
         "sessionDescription": "Idris Alegrio works as a product designer, but have years of experience within brand designing. He talks about product design and how to incorporate and optimize a company's brand identity in a product design.",
         "sessionSpeakers": ["Idris Alegrio"],
         "sessionDate": "01-18-2020",
-        "sessionStartTime": "14:15",
-        "sessionEndTime": "15:15",
+        "sessionStartTime": "10:15",
+        "sessionEndTime": "12:00",
         "sessionStage": "Inspiration Stage",
         "sessionTags": ["Graphic design", "Product design"],
         "isBreak": false
@@ -367,7 +367,7 @@
         "sessionStartTime": "15:30",
         "sessionEndTime": "17:30",
         "sessionStage": "Main Stage",
-        "sessionTags": ["Networking"],
+        "sessionTags": [],
         "isBreak": false
       },
       {
@@ -403,7 +403,7 @@
         "sessionStartTime": "10:30",
         "sessionEndTime": "12:00",
         "sessionStage": "Panel Stage",
-        "sessionTags": ["Workshop", "Development"],
+        "sessionTags": ["Development"],
         "isBreak": false
       },
       {
@@ -540,7 +540,7 @@
         "sessionStartTime": "15:30",
         "sessionEndTime": "18:00",
         "sessionStage": "Main Stage",
-        "sessionTags": ["Networking"],
+        "sessionTags": [],
         "isBreak": false
       },
       {
@@ -563,7 +563,7 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "10:00",
         "sessionEndTime": "16:00",
-        "sessionStage": "Exhibition",
+        "sessionStage": "Exhibition Space",
         "sessionTags": ["Development"],
         "isBreak": false
       },
@@ -575,8 +575,8 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "10:00",
         "sessionEndTime": "16:00",
-        "sessionStage": "Exhibition",
-        "sessionTags": ["Networking"],
+        "sessionStage": "Exhibition Space",
+        "sessionTags": [],
         "isBreak": false
       },
       {
@@ -587,8 +587,8 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "10:00",
         "sessionEndTime": "16:00",
-        "sessionStage": "Exhibition",
-        "sessionTags": ["Networking"],
+        "sessionStage": "Exhibition Space",
+        "sessionTags": [],
         "isBreak": false
       }
     ]

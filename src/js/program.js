@@ -2,6 +2,11 @@ import createSessionCards from './sessionCard.js';
 
 ('use strict');
 let programGrid = document.querySelector('.program--grid');
+const daysBar = document.querySelector('.navbar--days');
+const mobileFilterDrawer = document.querySelector('.filterdrawer--mobile');
+const filterdrawerContent = document.querySelector('#filterdrawerContent');
+const stageFilterSection = document.querySelector('.section--stagefilters');
+
 let speakers = [];
 let programSettings = [];
 let eventSessions = [];
@@ -15,7 +20,7 @@ const stageColumnTemplate = document.querySelector('#stageColumnTemplate')
   .content;
 const timelineTemplate = document.querySelector('#timelineTemplate').content;
 
-// init
+// --------- DATA FETCHING ------------- //
 window.onload = function() {
   localStorage.clear(); // for dev purposes clear - in prod it will remember from previous sessions
   favouriteList =
@@ -40,7 +45,7 @@ window.onload = function() {
   });
 };
 
-const fetchEventSessions = ({ eventID, eventDays, eventStages }) => {
+const fetchEventSessions = ({ eventID, eventDays, eventStages, eventTags }) => {
   // get the right program sessions for this event
   import(
     /* webpackChunkName: "json/programSessions" */
@@ -50,22 +55,23 @@ const fetchEventSessions = ({ eventID, eventDays, eventStages }) => {
       event => event.eventID === eventID
     );
     eventSessions = eventProgram.eventSessions;
-    console.log(eventSessions);
     if (eventSessions.length > 0) {
       constructDaysBar(eventDays);
       constructStageColumns(eventDays, eventStages);
+      createFilterdrawerContent(eventTags, eventStages);
     }
   });
 };
 
-// EVENT HANDLERS
+// --------- EVENT HANDLERS ------------- //
 
+// --- user clicks on different day
 const showSelectedDay = e => {
   favouriteListClicked = false;
   programGrid.classList.remove('grid--favouriteList');
   const previousSelected = document.querySelector('.current');
   previousSelected && previousSelected.classList.remove('current');
-  //add classlist current
+
   let dayButton;
   if (e.target.classList.contains('button--days')) {
     dayButton = e.target;
@@ -86,7 +92,7 @@ const showSelectedDay = e => {
   );
 };
 
-// -- favouriteList
+// --- favouriteList interactions
 const addToFavouriteList = e => {
   const addedSession = e.parentNode.id;
   e.src = './images/heart_solid.svg';
@@ -122,17 +128,35 @@ const showFavouriteList = () => {
   constructStageColumns(programSettings.eventDays, programSettings.eventStages);
 };
 
-// EVENT LISTENERS
+const openFilterDrawer = event => {
+  mobileFilterDrawer.classList.add('filterdrawerOpened');
+  filterdrawerContent.classList.remove('hide');
+};
+
+// --------- EVENT LISTENERS ------------- //
 
 document.addEventListener('click', function(event) {
   if (event.target.id === 'button--favouritelist') {
     showFavouriteList();
   }
   if (event.target.classList.contains('selectDay')) {
-    console.log(event.target);
     showSelectedDay(event);
   }
+  if (event.target.id === 'button--opendrawer') {
+    openFilterDrawer(event);
+  }
 });
+
+// --------- BUILD DYNAMIC LAYOUT ------------- //
+
+const createFilterdrawerContent = (eventTags, eventStages) => {
+  // eventTags.map( for each tag create a div)
+  eventStages.map(stage => {
+    const newStageButton = document.createElement('button');
+    newStageButton.textContent = stage;
+    stageFilterSection.appendChild(newStageButton);
+  });
+};
 
 const constructDaysBar = eventDays => {
   let dayDurationHours = 0;
@@ -156,8 +180,6 @@ const constructDaysBar = eventDays => {
   });
   constructTimeline(dayDurationHours);
 };
-
-const daysBar = document.querySelector('.navbar--days');
 
 // create button for each day and append to .navbar--days
 const createDaysButton = dayData => {
@@ -187,7 +209,6 @@ const constructStageColumns = (eventDays, eventStages, selectedDayNumber) => {
   if (eventStages.length > 0) {
     document.documentElement.style.setProperty('--colNum', columnNumber);
   }
-  console.log(favouriteListClicked);
 
   if (favouriteListClicked) {
     fillColumnTemplate('Favourites');
@@ -227,8 +248,6 @@ const prepareColumnData = (eventDays, eventStages, selectedDay) => {
       session => session.sessionDate === eventDays[0].date
     );
   }
-  console.log(favouriteList);
-  console.table(selectedSessions);
 
   eventStages.map(stage => {
     const sessionsByStage = selectedSessions.filter(
