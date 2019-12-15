@@ -40,7 +40,7 @@
       },
       {
         "sessionID": "sess1003",
-        "sessionTitle": "Panel discussion on trends in 2020",
+        "sessionTitle": "Panel discussion: Great trends in 2020",
         "sessionDescription": "What will the newest digital design, content and marketing trends be of 2020, and how does those go hand in hand with each other? Nikolai, Jane, Samuel and Mira will discuss that at the digital panel",
         "sessionSpeakers": [
           "Nikolai Godfrey",
@@ -295,7 +295,7 @@
       },
       {
         "sessionID": "sess1022",
-        "sessionTitle": "Panel Discussion: Collaborating within different field of work",
+        "sessionTitle": "Panel discussion: Collaborating within different fields of work",
         "sessionDescription": "Go on a journey with four different people from different work fields, discussing why it is so important to be able to collaborate across different work field, and what difference it makes.",
         "sessionSpeakers": [
           "Andrew Nelson",
@@ -336,7 +336,7 @@
       },
       {
         "sessionID": "sess1025",
-        "sessionTitle": "Panel discussion on how to start your own business",
+        "sessionTitle": "Panel discussion: Best start-up practices",
         "sessionDescription": "Come and hear Sarah, Morgan, Lena and David talking about how to start your own business. Hear them talk about each of their story, struggels and success they encountered, on their journey.",
         "sessionSpeakers": ["Sarah Petersen", "Morgan Pope", "David Kadlec"],
         "sessionDate": "01-18-2020",
@@ -468,7 +468,7 @@
       },
       {
         "sessionID": "sess1036",
-        "sessionTitle": "Panel Discussion: Collaborating with different fields",
+        "sessionTitle": "Panel discussion: Collaborating with different fields",
         "sessionDescription": "Go on a journey with four different people from different work fields, discussing why it is so important to be able to collaborate across different work field, and what difference it makes.",
         "sessionSpeakers": [
           "Andrew Nelson",
@@ -509,7 +509,7 @@
       },
       {
         "sessionID": "sess1039",
-        "sessionTitle": "Panel discussion on how to start your own business",
+        "sessionTitle": "Panel discussion: How to start your own business",
         "sessionDescription": "Come and hear Sarah, Morgan, Lena and David talking about how to start your own business. Hear them talk about each of their story, struggels and success they encountered, on their journey.",
         "sessionSpeakers": ["Sarah Petersen", "Morgan Pope", "David Kadlec"],
         "sessionDate": "01-19-2020",

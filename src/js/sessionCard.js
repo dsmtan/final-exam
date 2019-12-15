@@ -32,8 +32,10 @@ const createSessionCards = (
 
   const durationDiv = sessionCardCopy.querySelector('.session--duration');
   const heartIcon = sessionCardCopy.querySelector('.icon--heartoutline');
+  const inFavourites = favouriteList.find(favourite => favourite === sessionID);
 
   if (favouriteListClicked) {
+    //same layout for filters
     durationDiv.style.width = '100%';
     const utcDate = new Date(sessionDate);
     const options = {
@@ -56,7 +58,7 @@ const createSessionCards = (
       sessionStartTime,
       sessionEndTime
     );
-
+    inFavourites && (heartIcon.src = './images/heart_solid.svg');
     heartIcon.addEventListener('click', e => {
       addToFavouriteList(e.target);
     });
