@@ -81,23 +81,6 @@
   }
 }
 
-.div--daydots {
-  margin-top: 7px;
-  @include flexCenter;
-  .div--dot {
-    margin: 2px;
-    display: inline-block;
-    height: 6px;
-    width: 6px;
-    background-color: $mainColour;
-    border-radius: 50%;
-
-    &.dot2 {
-      background-color: $colour2;
-    }
-  }
-}
-
 .program--grid {
   position: relative;
   background-color: $tameLightGrey;
@@ -121,7 +104,7 @@
   font-size: 0.6em;
   color: $tameGrey;
   text-align: center;
-  padding-top: 35px;
+  padding-top: 49px;
   padding-bottom: 60px;
   scroll-snap-align: start;
   position: sticky;
@@ -130,7 +113,8 @@
   z-index: 10;
 
   p {
-    margin: 0 0 12em 0;
+    margin: 0;
+    height: 13em;
   }
 }
 
@@ -142,7 +126,7 @@
   z-index: 5;
 
   .p--stagetitle {
-    height: 35px;
+    height: 31px;
     margin: 0;
     padding-top: 12px;
     text-align: center;
@@ -150,6 +134,21 @@
     font-size: 0.8em;
     text-transform: uppercase;
   }
+}
+
+.div--typedots {
+  @include flexCenter;
+}
+
+.div--dot {
+  margin: 1.5px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  background-color: $mainColour;
+  border-radius: 50%;
 }
 
 #columnFavourites {
@@ -237,4 +236,17 @@
       animation: pulse 0.5s;
     }
   }
+}
+
+// --------- DESKTOP SIZE ----------//
+
+@mixin program--desktop {
+  .button--days {
+    color: $mainColour;
+  }
+}
+
+.hide {
+  display: none;
+  height: 0;
 }

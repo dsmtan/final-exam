@@ -430,10 +430,38 @@ const constructStageColumns = (
 
 const fillColumnTemplate = stageName => {
   const stageColumnCopy = stageColumnTemplate.cloneNode(true);
-  let columnDiv = stageColumnCopy.querySelector('.column--stage');
+  const columnDiv = stageColumnCopy.querySelector('.column--stage');
   columnDiv.id = 'column' + stageName.replace(/\s/g, '');
-  stageColumnCopy.querySelector('.p--stagetitle').textContent =
+  const stageTitle = stageColumnCopy.querySelector('.p--stagetitle');
+  stageTitle.textContent =
     stageName === 'Favourites' ? 'Your Favourites' : stageName;
+
+  if (stageName === 'Favourites' || stageName === 'Filtered Sessions') {
+    stageColumnCopy.querySelector('#stageDots').classList.add('hide');
+    stageTitle.style.marginBottom = '5px';
+  }
+  // make dots dynamic with more time
+  if (stageName === 'Main Stage') {
+    stageColumnCopy.querySelector('#dot1').style.backgroundColor = '#AAE0EC';
+    stageColumnCopy.querySelector('#dot2').style.backgroundColor = '#F5C9C9';
+    stageColumnCopy.querySelector('#dot3').style.backgroundColor = '#7C7AEE';
+  }
+  if (stageName === 'Inspiration Stage') {
+    stageColumnCopy.querySelector('#dot1').style.backgroundColor = '#AAE0EC';
+    stageColumnCopy.querySelector('#dot2').style.backgroundColor = '#F5C9C9';
+    stageColumnCopy.querySelector('#dot3').classList.add('hide');
+  }
+  if (stageName === 'Panel Stage') {
+    stageColumnCopy.querySelector('#dot1').style.backgroundColor = '#fae5ca';
+    stageColumnCopy.querySelector('#dot2').style.backgroundColor = '#F5C9C9';
+    stageColumnCopy.querySelector('#dot3').classList.add('hide');
+  }
+  if (stageName === 'Exhibition Space') {
+    stageColumnCopy.querySelector('#dot1').style.backgroundColor = '#AAE0EC';
+    stageColumnCopy.querySelector('#dot2').classList.add('hide');
+    stageColumnCopy.querySelector('#dot3').classList.add('hide');
+  }
+
   programGrid.appendChild(stageColumnCopy);
 };
 
