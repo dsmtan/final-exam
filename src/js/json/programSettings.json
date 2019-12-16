@@ -36,7 +36,8 @@
     { "name": "Networking", "color": "#7C7AEE" },
     { "name": "Workshop", "color": "#F5C9C9" },
     { "name": "Talk", "color": "#AAE0EC" },
-    { "name": "Break", "color": "#C4C4C4" }
+    { "name": "Panel", "color": "#fae5ca" },
+    { "name": "Break", "color": "#c4c4c4" }
   ],
   "eventTimeSlots": ["Morning", "Afternoon", "Evening"]
 }

@@ -12,17 +12,24 @@ const createSessionCards = (
     sessionEndTime,
     sessionStage,
     sessionTags,
+    sessionType,
     isBreak,
   },
   speakers,
   favouriteList,
   favouriteListClicked,
   addToFavouriteList,
-  removeFromFavouriteList
+  removeFromFavouriteList,
+  filtersApplied,
+  eventSessionTypes
 ) => {
   const sessionCardCopy = sessionCardTemplate.cloneNode(true);
   let sessionItem = sessionCardCopy.querySelector('.session--item');
   sessionItem.id = sessionID;
+
+  const sessionColor = eventSessionTypes.find(type => type.name === sessionType)
+    .color;
+  sessionItem.style.borderColor = sessionColor;
 
   // add session content
   sessionCardCopy.querySelector('.session--title').textContent = sessionTitle;
@@ -34,7 +41,7 @@ const createSessionCards = (
   const heartIcon = sessionCardCopy.querySelector('.icon--heartoutline');
   const inFavourites = favouriteList.find(favourite => favourite === sessionID);
 
-  if (favouriteListClicked) {
+  if (favouriteListClicked || filtersApplied) {
     //same layout for filters
     durationDiv.style.width = '100%';
     const utcDate = new Date(sessionDate);
@@ -48,10 +55,20 @@ const createSessionCards = (
     );
 
     durationDiv.innerHTML = `${sessionStage.toUpperCase()} &nbsp;&nbsp;|&nbsp;&nbsp; ${stringDate} ${sessionStartTime} - ${sessionEndTime}`;
-    heartIcon.src = './images/heart_solid.svg';
-    heartIcon.addEventListener('click', e => {
-      removeFromFavouriteList(e.target);
-    });
+
+    if (favouriteListClicked) {
+      heartIcon.src = './images/heart_solid.svg';
+      heartIcon.addEventListener('click', e => {
+        removeFromFavouriteList(e.target);
+      });
+    }
+
+    if (filtersApplied) {
+      inFavourites && (heartIcon.src = './images/heart_solid.svg');
+      heartIcon.addEventListener('click', e => {
+        addToFavouriteList(e.target);
+      });
+    }
   } else {
     durationDiv.textContent = calculateSessionDuration(
       sessionDate,
@@ -86,7 +103,11 @@ const createSessionCards = (
       });
   }
 
-  const parentName = favouriteListClicked ? 'Favourites' : sessionStage;
+  const parentName = favouriteListClicked
+    ? 'Favourites'
+    : filtersApplied
+    ? 'Filtered Sessions'
+    : sessionStage;
   const parentID = '#column' + parentName.replace(/\s/g, '');
   const parentColumn = document.querySelector(parentID);
 

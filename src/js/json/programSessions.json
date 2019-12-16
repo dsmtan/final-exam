@@ -10,8 +10,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "10:00",
         "sessionEndTime": "10:30",
+        "sessionSlot": "Morning",
         "sessionStage": "Main Stage",
         "sessionTags": [],
+        "sessionType": "Break",
         "isBreak": true
       },
       {
@@ -22,8 +24,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "10:30",
         "sessionEndTime": "11:00",
+        "sessionSlot": "Morning",
         "sessionStage": "Main Stage",
         "sessionTags": [],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -34,8 +38,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "11:15",
         "sessionEndTime": "12:15",
+        "sessionSlot": "Morning",
         "sessionStage": "Main Stage",
         "sessionTags": ["Development"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -51,13 +57,15 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "11:15",
         "sessionEndTime": "12:15",
+        "sessionSlot": "Morning",
         "sessionStage": "Panel Stage",
         "sessionTags": ["UX design", "Graphic design"],
+        "sessionType": "Panel",
         "isBreak": false
       },
       {
         "sessionID": "sess1004",
-        "sessionTitle": "How to design for a sustainable future",
+        "sessionTitle": "Workshop: How to design for a sustainable future",
         "sessionDescription": "Johannes Stanley talks about how companies can start designing for a more sustainable future and how design can have an impact in the fight for saving the earth.",
         "sessionSpeakers": ["Johannes Stanley"],
         "sessionDate": "01-17-2020",
@@ -65,6 +73,7 @@
         "sessionEndTime": "12:15",
         "sessionStage": "Main Stage",
         "sessionTags": ["Graphic design"],
+        "sessionType": "Workshop",
         "isBreak": false
       },
       {
@@ -75,8 +84,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "12:15",
         "sessionEndTime": "13:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Main Stage",
         "sessionTags": [],
+        "sessionType": "Break",
         "isBreak": true
       },
       {
@@ -87,8 +98,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "12:15",
         "sessionEndTime": "13:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Panel Stage",
         "sessionTags": [],
+        "sessionType": "Break",
         "isBreak": true
       },
       {
@@ -99,8 +112,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "12:15",
         "sessionEndTime": "13:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Inspiration Stage",
         "sessionTags": [],
+        "sessionType": "Break",
         "isBreak": true
       },
       {
@@ -111,8 +126,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Main Stage",
         "sessionTags": ["UX design", "Marketing"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -128,8 +145,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "15:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Business"],
+        "sessionType": "Workshop",
         "isBreak": false
       },
       {
@@ -140,8 +159,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Inspiration Stage",
         "sessionTags": ["Marketing", "Social media"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -152,8 +173,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "14:15",
         "sessionEndTime": "15:15",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Main Stage",
         "sessionTags": ["Business"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -164,8 +187,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "14:15",
         "sessionEndTime": "15:15",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Inspiration Stage",
         "sessionTags": ["Graphic design", "Product design"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -181,8 +206,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "15:00",
         "sessionEndTime": "16:30",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Development", "UX design"],
+        "sessionType": "Panel",
         "isBreak": false
       },
       {
@@ -193,8 +220,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "16:00",
         "sessionEndTime": "18:00",
+        "sessionSlot": "Evening",
         "sessionStage": "Panel Stage",
         "sessionTags": [],
+        "sessionType": "Networking",
         "isBreak": false
       },
       {
@@ -205,8 +234,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "10:00",
         "sessionEndTime": "10:30",
+        "sessionSlot": "Morning",
         "sessionStage": "Main Stage",
         "sessionTags": [],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -217,8 +248,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "10:30",
         "sessionEndTime": "12:00",
+        "sessionSlot": "Morning",
         "sessionStage": "Main Stage",
         "sessionTags": ["Development", "UX design"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -229,8 +262,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "10:30",
         "sessionEndTime": "12:00",
+        "sessionSlot": "Morning",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Development"],
+        "sessionType": "Workshop",
         "isBreak": false
       },
       {
@@ -241,8 +276,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "11:00",
         "sessionEndTime": "12:00",
+        "sessionSlot": "Morning",
         "sessionStage": "Main Stage",
         "sessionTags": ["Graphic design"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -253,8 +290,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "12:15",
         "sessionEndTime": "13:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Main Stage",
         "sessionTags": [],
+        "sessionType": "Break",
         "isBreak": true
       },
       {
@@ -265,8 +304,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "12:15",
         "sessionEndTime": "13:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Panel Stage",
         "sessionTags": [],
+        "sessionType": "Break",
         "isBreak": true
       },
       {
@@ -277,8 +318,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "12:00",
         "sessionEndTime": "13:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Inspiration Stage",
         "sessionTags": [],
+        "sessionType": "Break",
         "isBreak": true
       },
       {
@@ -289,8 +332,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Main Stage",
         "sessionTags": ["UX design", "Marketing"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -306,8 +351,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:30",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Development", "Product design"],
+        "sessionType": "Panel",
         "isBreak": false
       },
       {
@@ -318,8 +365,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Inspiration Stage",
         "sessionTags": ["Marketing", "Social media"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -330,8 +379,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "14:15",
         "sessionEndTime": "15:15",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Main Stage",
         "sessionTags": ["Business"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -342,8 +393,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "14:35",
         "sessionEndTime": "16:35",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Business"],
+        "sessionType": "Panel",
         "isBreak": false
       },
       {
@@ -354,8 +407,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "10:15",
         "sessionEndTime": "12:00",
+        "sessionSlot": "Morning",
         "sessionStage": "Inspiration Stage",
         "sessionTags": ["Graphic design", "Product design"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -366,8 +421,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "15:30",
         "sessionEndTime": "17:30",
+        "sessionSlot": "Evening",
         "sessionStage": "Main Stage",
         "sessionTags": [],
+        "sessionType": "Networking",
         "isBreak": false
       },
       {
@@ -378,8 +435,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "10:00",
         "sessionEndTime": "10:30",
+        "sessionSlot": "Morning",
         "sessionStage": "Main Stage",
         "sessionTags": [],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -390,8 +449,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "10:30",
         "sessionEndTime": "12:00",
+        "sessionSlot": "Morning",
         "sessionStage": "Main Stage",
         "sessionTags": ["Development", "UX design"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -402,8 +463,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "10:30",
         "sessionEndTime": "12:00",
+        "sessionSlot": "Morning",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Development"],
+        "sessionType": "Workshop",
         "isBreak": false
       },
       {
@@ -414,8 +477,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "11:00",
         "sessionEndTime": "12:00",
+        "sessionSlot": "Morning",
         "sessionStage": "Main Stage",
         "sessionTags": ["Graphic design"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -426,8 +491,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "12:00",
         "sessionEndTime": "13:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Main Stage",
         "sessionTags": [],
+        "sessionType": "Break",
         "isBreak": true
       },
       {
@@ -438,8 +505,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "12:00",
         "sessionEndTime": "13:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Panel Stage",
         "sessionTags": [],
+        "sessionType": "Break",
         "isBreak": true
       },
       {
@@ -450,8 +519,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "12:00",
         "sessionEndTime": "13:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Inspiration Stage",
         "sessionTags": [],
+        "sessionType": "Break",
         "isBreak": true
       },
       {
@@ -462,8 +533,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Main Stage",
         "sessionTags": ["UX design", "Marketing"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -479,8 +552,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:30",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Development", "Product design"],
+        "sessionType": "Panel",
         "isBreak": false
       },
       {
@@ -491,8 +566,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "13:00",
         "sessionEndTime": "14:00",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Inspiration Stage",
         "sessionTags": ["Marketing", "Social media"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -503,8 +580,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "14:15",
         "sessionEndTime": "15:15",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Main Stage",
         "sessionTags": ["Business"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -515,8 +594,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "14:35",
         "sessionEndTime": "16:35",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Panel Stage",
         "sessionTags": ["Business"],
+        "sessionType": "Panel",
         "isBreak": false
       },
       {
@@ -527,8 +608,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "14:15",
         "sessionEndTime": "15:15",
+        "sessionSlot": "Afternoon",
         "sessionStage": "Inspiration Stage",
         "sessionTags": ["Graphic design", "Product design"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -539,8 +622,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "15:30",
         "sessionEndTime": "18:00",
+        "sessionSlot": "Evening",
         "sessionStage": "Main Stage",
         "sessionTags": [],
+        "sessionType": "Networking",
         "isBreak": false
       },
       {
@@ -551,8 +636,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "09:00",
         "sessionEndTime": "12:00",
+        "sessionSlot": "Morning",
         "sessionStage": "Inspiration Stage",
         "sessionTags": ["Development"],
+        "sessionType": "Workshop",
         "isBreak": false
       },
       {
@@ -563,8 +650,10 @@
         "sessionDate": "01-17-2020",
         "sessionStartTime": "10:00",
         "sessionEndTime": "16:00",
+        "sessionSlot": "Morning",
         "sessionStage": "Exhibition Space",
         "sessionTags": ["Development"],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -575,8 +664,10 @@
         "sessionDate": "01-18-2020",
         "sessionStartTime": "10:00",
         "sessionEndTime": "16:00",
+        "sessionSlot": "Morning",
         "sessionStage": "Exhibition Space",
         "sessionTags": [],
+        "sessionType": "Talk",
         "isBreak": false
       },
       {
@@ -587,8 +678,10 @@
         "sessionDate": "01-19-2020",
         "sessionStartTime": "10:00",
         "sessionEndTime": "16:00",
+        "sessionSlot": "Morning",
         "sessionStage": "Exhibition Space",
         "sessionTags": [],
+        "sessionType": "Talk",
         "isBreak": false
       }
     ]

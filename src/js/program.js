@@ -4,6 +4,7 @@ import createSessionCards from './sessionCard.js';
 let programGrid = document.querySelector('.program--grid');
 const daysBar = document.querySelector('.navbar--days');
 const mobileFilterDrawer = document.querySelector('.filterdrawer--mobile');
+const filterIndicator = document.querySelector('.div--filterindicator');
 const filterdrawerContent = document.querySelector('#button--drawerContent');
 const tagFilterSection = document.querySelector('.section--tagfilters');
 const typeFilterSection = document.querySelector('.section--typefilters');
@@ -16,6 +17,13 @@ let programSettings = [];
 let eventSessions = [];
 let favouriteList = [];
 let favouriteListClicked = false;
+let chosenFilters = {
+  tags: [],
+  types: [],
+  timeslots: [],
+  stages: [],
+};
+let filtersApplied = false;
 
 //templates
 const daysButtonTemplate = document.querySelector('#daysButtonTemplate')
@@ -84,7 +92,8 @@ const fetchEventSessions = ({
 // --- user clicks on different day
 const showSelectedDay = e => {
   favouriteListClicked = false;
-  programGrid.classList.remove('grid--favouriteList');
+  filtersApplied = false;
+  programGrid.classList.remove('grid--filteredlist');
   const previousSelected = document.querySelector('.current');
   previousSelected && previousSelected.classList.remove('current');
 
@@ -97,15 +106,12 @@ const showSelectedDay = e => {
 
   dayButton.classList.add('current');
   const selectedDayNumber = dayButton.id.charAt(dayButton.id.length - 1);
+  const { eventDays, eventStages } = programSettings;
 
   // clear grid from previous data and re-render
   programGrid.innerHTML = '';
   constructTimeline();
-  constructStageColumns(
-    programSettings.eventDays,
-    programSettings.eventStages,
-    selectedDayNumber
-  );
+  constructStageColumns(eventDays, eventStages, selectedDayNumber);
 };
 
 // --- favouriteList interactions
@@ -131,17 +137,17 @@ const removeFromFavouriteList = e => {
   let index = favouriteList.indexOf(removedSession);
   index > -1 && favouriteList.splice(index, 1);
   localStorage.setItem('favouriteList', JSON.stringify(favouriteList));
-  showFavouriteList();
+  showFilteredList();
 };
 
-const showFavouriteList = () => {
+const showFilteredList = filteredSessions => {
+  const { eventDays, eventStages } = programSettings;
   const currentDay = document.querySelector('.current');
   currentDay && currentDay.classList.remove('current');
   programGrid.innerHTML = '';
-  programGrid.classList.add('grid--favouriteList');
+  programGrid.classList.add('grid--filteredlist');
 
-  favouriteListClicked = true;
-  constructStageColumns(programSettings.eventDays, programSettings.eventStages);
+  constructStageColumns(eventDays, eventStages, {}, filteredSessions);
 };
 
 const toggleFilterDrawer = () => {
@@ -150,17 +156,148 @@ const toggleFilterDrawer = () => {
   applyFilterSection.classList.toggle('hide');
 };
 
+const toggleFilter = (e, clickedFilter) => {
+  const chosenFilterArray = findFilterArray(e);
+  // check if filter is already selected
+  let filterIndex = chosenFilterArray.findIndex(
+    filter => filter === clickedFilter
+  );
+
+  filterIndex > -1
+    ? chosenFilterArray.splice(filterIndex, 1)
+    : chosenFilterArray.push(clickedFilter);
+  console.log(chosenFilters);
+};
+
+const applyFilters = () => {
+  let filteredSessions = [];
+  filterIndicator.classList.remove('hideIndicator');
+
+  if (chosenFilters.tags.length > 0) {
+    const tagSessions = chosenFilters.tags.flatMap(chosenTag =>
+      eventSessions.filter(session => {
+        const foundTag = session.sessionTags.find(tag => tag === chosenTag);
+        if (foundTag) {
+          return session;
+        }
+      })
+    );
+    filteredSessions.push(...tagSessions);
+  }
+
+  if (chosenFilters.types.length > 0) {
+    const typeSessions = chosenFilters.types.flatMap(chosenType =>
+      eventSessions.filter(session => {
+        const foundType = session.sessionType === chosenType;
+        if (foundType) {
+          return session;
+        }
+      })
+    );
+    filteredSessions.push(...typeSessions);
+  }
+
+  if (chosenFilters.timeslots.length > 0) {
+    const slotSessions = chosenFilters.timeslots.flatMap(chosenSlot =>
+      eventSessions.filter(session => {
+        const foundSlot = session.sessionSlot === chosenSlot;
+        if (foundSlot) {
+          return session;
+        }
+      })
+    );
+    filteredSessions.push(...slotSessions);
+  }
+
+  if (chosenFilters.stages.length > 0) {
+    const stageSessions = chosenFilters.stages.flatMap(chosenStage =>
+      eventSessions.filter(session => {
+        const foundStage = session.sessionStage === chosenStage;
+        if (foundStage) {
+          return session;
+        }
+      })
+    );
+    filteredSessions.push(...stageSessions);
+    console.log(filteredSessions);
+  }
+  // filter out duplicate sessions
+  const uniqueFilteredSessions = [...new Set(filteredSessions)]; //mind blown
+  console.log(uniqueFilteredSessions);
+
+  filtersApplied = true;
+  toggleFilterDrawer();
+  showFilteredList(uniqueFilteredSessions);
+};
+
+const resetFilters = () => {
+  filterIndicator.classList.add('hideIndicator');
+  let selectedTags = document.getElementsByClassName('tagClicked');
+  let selectedFilters = document.getElementsByClassName('filterClicked');
+  removeClasses(selectedTags, selectedFilters);
+
+  chosenFilters = {
+    tags: [],
+    types: [],
+    timeslots: [],
+    stages: [],
+  };
+  console.log(chosenFilters);
+};
+
+function removeClasses(selectedTags, selectedFilters) {
+  while (selectedTags.length)
+    selectedTags[0].className = selectedTags[0].className.replace(
+      /\btagClicked\b/g,
+      ''
+    );
+
+  while (selectedFilters.length)
+    selectedFilters[0].className = selectedFilters[0].className.replace(
+      /\bfilterClicked\b/g,
+      ''
+    );
+}
+
+function findFilterArray(e) {
+  if (e.target.classList.contains('button--tags')) {
+    e.target.classList.toggle('tagClicked');
+    return chosenFilters.tags;
+  }
+  if (e.target.classList.contains('button--types')) {
+    e.target.classList.toggle('filterClicked');
+    return chosenFilters.types;
+  }
+  if (e.target.classList.contains('button--timeslots')) {
+    e.target.classList.toggle('filterClicked');
+    return chosenFilters.timeslots;
+  }
+  if (e.target.classList.contains('button--stages')) {
+    e.target.classList.toggle('filterClicked');
+    return chosenFilters.stages;
+  }
+}
+
 // --------- EVENT LISTENERS ------------- //
 
 document.addEventListener('click', function(event) {
   if (event.target.id === 'button--favouritelist') {
-    showFavouriteList();
+    favouriteListClicked = true;
+    resetFilters();
+    showFilteredList();
   }
   if (event.target.classList.contains('selectDay')) {
+    resetFilters();
     showSelectedDay(event);
   }
   if (event.target.id === 'button--toggledrawer') {
     toggleFilterDrawer();
+  }
+  if (event.target.id === 'applyButton') {
+    applyFilters();
+  }
+  if (event.target.id === 'resetButton') {
+    resetFilters();
   }
 });
 
@@ -177,21 +314,32 @@ const createFilterdrawerContent = (
     const newTagButton = document.createElement('button');
     newTagButton.textContent = tag;
     newTagButton.classList.add('button--tags');
+    newTagButton.addEventListener('click', e => {
+      toggleFilter(e, tag);
+    });
     tagFilterSection.appendChild(newTagButton);
   });
 
   eventSessionTypes.map(type => {
-    const newTypeButton = document.createElement('button');
-    newTypeButton.classList.add('button--types');
-    newTypeButton.textContent = type.name;
-    newTypeButton.style.borderColor = type.color;
-    typeFilterSection.appendChild(newTypeButton);
+    if (type.name !== 'Break') {
+      const newTypeButton = document.createElement('button');
+      newTypeButton.classList.add('button--types');
+      newTypeButton.textContent = type.name;
+      newTypeButton.style.borderColor = type.color;
+      newTypeButton.addEventListener('click', e => {
+        toggleFilter(e, type.name);
+      });
+      typeFilterSection.appendChild(newTypeButton);
+    }
   });
 
   eventTimeSlots.map(slot => {
     const newTimeSlotButton = document.createElement('button');
     newTimeSlotButton.textContent = slot;
     newTimeSlotButton.classList.add('button--timeslots');
+    newTimeSlotButton.addEventListener('click', e => {
+      toggleFilter(e, slot);
+    });
     timeFilterSection.appendChild(newTimeSlotButton);
   });
 
@@ -199,6 +347,9 @@ const createFilterdrawerContent = (
     const newStageButton = document.createElement('button');
     newStageButton.textContent = stage;
     newStageButton.classList.add('button--stages');
+    newStageButton.addEventListener('click', e => {
+      toggleFilter(e, stage);
+    });
     stageFilterSection.appendChild(newStageButton);
   });
 };
@@ -248,7 +399,12 @@ const constructTimeline = (dayStart, dayEnd, dayDurationHours) => {
   programGrid.appendChild(timelineColumnCopy);
 };
 
-const constructStageColumns = (eventDays, eventStages, selectedDayNumber) => {
+const constructStageColumns = (
+  eventDays,
+  eventStages,
+  selectedDayNumber,
+  filteredSessions
+) => {
   const columnNumber = eventStages.length;
   // set sass variable of column numbers in grid
   if (eventStages.length > 0) {
@@ -257,12 +413,19 @@ const constructStageColumns = (eventDays, eventStages, selectedDayNumber) => {
 
   if (favouriteListClicked) {
     fillColumnTemplate('Favourites');
+  } else if (filtersApplied) {
+    fillColumnTemplate('Filtered Sessions');
   } else {
     //grab template
     eventStages.map(stage => fillColumnTemplate(stage));
   }
 
-  prepareColumnData(eventDays, eventStages, selectedDayNumber);
+  prepareColumnData(
+    eventDays,
+    eventStages,
+    selectedDayNumber,
+    filteredSessions
+  );
 };
 
 const fillColumnTemplate = stageName => {
@@ -270,19 +433,27 @@ const fillColumnTemplate = stageName => {
   let columnDiv = stageColumnCopy.querySelector('.column--stage');
   columnDiv.id = 'column' + stageName.replace(/\s/g, '');
   stageColumnCopy.querySelector('.p--stagetitle').textContent =
-    stageName !== 'Favourites' ? stageName : 'Your Favourites';
+    stageName === 'Favourites' ? 'Your Favourites' : stageName;
   programGrid.appendChild(stageColumnCopy);
 };
 
-const prepareColumnData = (eventDays, eventStages, selectedDay) => {
+const prepareColumnData = (
+  eventDays,
+  eventStages,
+  selectedDay,
+  filteredSessions
+) => {
   let selectedSessions = [];
 
   if (favouriteListClicked) {
+    console.log(favouriteList);
     selectedSessions =
       favouriteList &&
       favouriteList.map(favourite =>
         eventSessions.find(session => session.sessionID === favourite)
       );
+  } else if (filtersApplied) {
+    selectedSessions = filteredSessions;
   } else if (selectedDay > 0) {
     selectedSessions = eventSessions.filter(
       session => session.sessionDate === eventDays[selectedDay - 1].date
@@ -319,7 +490,9 @@ const displaySessionsByStage = sessionsByStage => {
       favouriteList,
       favouriteListClicked,
       addToFavouriteList,
-      removeFromFavouriteList
+      removeFromFavouriteList,
+      filtersApplied,
+      programSettings.eventSessionTypes
     )
   );
 };

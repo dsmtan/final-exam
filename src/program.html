@@ -19,28 +19,29 @@
         <!-- add timeline, stage columns and program sessions dynamically -->
       </div>
 
-      <div class="filterdrawer--mobile filterdrawerOpened">
-        <p class="p--filterHeader" id="button--toggledrawer">Filters</p>
-        <div class="div--drawercontent" id="button--drawerContent">
+      <div class="filterdrawer--mobile">
+        <div class="p--filterHeader" id="button--toggledrawer">
+          Filters
+          <div class="div--filterindicator hideIndicator"></div>
+        </div>
+        <div class="div--drawercontent hide" id="button--drawerContent">
           <section class="section--tagfilters">
-            <img class="img--filtericons" src="./images/filter_tags.svg" />
             <h3>Tags</h3>
           </section>
           <section class="section--typefilters">
-            <img class="img--filtericons" src="./images/filter_types.svg" />
             <h3>Session types</h3>
           </section>
           <section class="section--timefilters">
-            <img class="img--filtericons" src="./images/filter_time.svg" />
             <h3>Time slots</h3>
           </section>
           <section class="section--stagefilters">
-            <img class="img--filtericons" src="./images/filter_stages.svg" />
             <h3>Stages</h3>
           </section>
         </div>
-        <section class="section--applyreset">
-          <button class="button--resetfilters">Reset filters</button>
+        <section class="section--applyreset hide">
+          <button class="button--resetfilters" id="resetButton">
+            Reset filters
+          </button>
           <button class="button--apply" id="applyButton">Apply</button>
         </section>
       </div>

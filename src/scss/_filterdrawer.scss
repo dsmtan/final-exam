@@ -13,7 +13,7 @@
   transition: height 0.4s ease-out;
 
   &.filterdrawerOpened {
-    height: calc(100vh - 50px);
+    height: calc(100vh - 55px);
   }
 
   .p--filterHeader {
@@ -28,13 +28,13 @@
   }
 
   .div--drawercontent {
-    height: calc(100vh - 140px);
+    height: calc(100vh - 150px);
     overflow: scroll;
   }
 
   section {
     width: 85%;
-    margin: 22px auto 10px;
+    margin: 23px auto 10px;
   }
 
   h3 {
@@ -59,8 +59,12 @@
     font-size: 0.85em;
     font-weight: 400;
 
+    &.tagClicked {
+      background-color: $mainColour;
+    }
+
     &.filterClicked {
-      background-color: rgba(255, 138, 138, 0.8);
+      border: 1.3px solid $mainColour;
     }
   }
 
@@ -77,18 +81,24 @@
 
   .button--types {
     border-left: 6px solid $tameNavy;
+
+    &.filterClicked {
+      border-top: 1.4px solid $mainColour;
+      border-right: 1.4px solid $mainColour;
+      border-bottom: 1.4px solid $mainColour;
+      border-left: 6px solid $mainColour;
+    }
   }
 
   .section--applyreset {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     height: 60px;
     background-color: white;
     border-top: 1px solid $tameNavy;
-    margin: 0 calc((100vw - 85%) / 2);
-    margin-top: 0;
+    margin: 0 calc((100vw - 85%) / 2) 10px;
     padding-top: 10px;
-    transition: height 0.4s;
+    transition: height 0.5s;
   }
 
   .button--resetfilters {
@@ -104,10 +114,15 @@
   }
 }
 
-.img--filtericons {
-  float: left;
-  height: 18px;
-  width: 18px;
-  margin-left: 5px;
-  margin-right: 7px;
+.div--filterindicator {
+  margin: 1px;
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  background-color: $tameNavy;
+  border-radius: 50%;
+}
+
+.hideIndicator {
+  visibility: hidden;
 }
