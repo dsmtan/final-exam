@@ -1,2 +1,134 @@
-section {
+.body--indexwrapper {
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  color: black;
 }
+
+button {
+  border: none;
+  font-family: $mainFont;
+  font-size: 1em;
+}
+
+.header--main {
+  margin: 0;
+  width: 100vw;
+  height: 85vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 32%;
+  color: white;
+  text-align: center;
+  padding: 0 10vw;
+}
+
+.h1--eventtitle {
+  padding-top: 37vh;
+  display: block;
+  font-family: $headerFont;
+  margin: 0;
+  margin-bottom: 5px;
+  color: white;
+  text-shadow: 0.9px 1px 2.5px rgba(0, 0, 0, 0.7);
+}
+
+.h2--eventsubtitle {
+  font-weight: 300;
+  margin: 0;
+  text-shadow: 1.2px 2.3px 2px rgba(0, 0, 0, 0.7);
+}
+
+.section--navbar {
+  position: fixed;
+  height: 120px;
+  bottom: 0;
+  background-color: white;
+  padding-bottom: 7px;
+  width: 100vw;
+  margin: 0;
+
+  &.onscrollHeight {
+    height: 65px;
+    padding-top: 7px;
+  }
+}
+
+.div--eventessentials {
+  padding: 10px;
+  width: 100vw;
+  overflow: hidden;
+
+  &.scrollDown {
+    display: none;
+  }
+
+  .h3--eventdates {
+    position: relative;
+    font-size: 1em;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  .p--address {
+    margin: 0;
+    font-weight: 300;
+  }
+}
+
+.div--navbuttons {
+  text-align: center;
+  width: 100vw;
+  padding-top: 5px;
+
+  .div--button {
+    display: inline-block;
+    height: 40px;
+    width: 43vw;
+    color: white;
+    padding: 3.5px;
+    text-align: center;
+    border-radius: 2px;
+
+    p {
+      position: relative;
+      margin: 0;
+      margin-top: 4px;
+      text-align: left;
+    }
+  }
+
+  .img-buttonicon {
+    margin-top: 3px;
+    margin-left: 18px;
+    margin-right: 7px;
+    float: left;
+    height: 22px;
+  }
+
+  #programButton {
+    background-color: $tameGrey;
+  }
+
+  #ticketsButton {
+    background-color: var(--mainColor);
+  }
+}
+
+svg {
+  width: 75%;
+  max-width: 100vw;
+}
+
+.mainPageWrapper {
+  width: 100vw;
+  overflow: hidden;
+}
+// #calendarSvg {
+//   .svgMain {
+//     fill: var(--mainColor);
+//   }
+//   .svgSecond {
+//     fill: var(--secondaryColor);
+//   }
+// }

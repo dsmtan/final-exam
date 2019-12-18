@@ -61,6 +61,7 @@ window.onload = function() {
 
 const fetchEventSessions = ({
   eventID,
+  eventMainColor,
   eventDays,
   eventStages,
   eventTags,
@@ -87,6 +88,8 @@ const fetchEventSessions = ({
       );
     }
   });
+
+  document.documentElement.style.setProperty('--mainColor', eventMainColor);
 };
 
 // --------- EVENT HANDLERS ------------- //
@@ -526,5 +529,4 @@ const displaySessionsByStage = sessionsByStage => {
       programSettings.eventSessionTypes
     )
   );
- 
 };

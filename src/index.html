@@ -8,15 +8,29 @@
     <title>Event website</title>
   </head>
 
-  <body>
-    <header class="header--hero">
-      <h1>DigiTECH 2020</h1>
-      <h2>The art of digital marketing</h2>
+  <body class="body--indexwrapper">
+    <header class="header--main">
+      <h1 class="h1--eventtitle">DigiTECH 2020</h1>
+      <h2 class="h2--eventsubtitle">The art of digital marketing.</h2>
     </header>
     <section class="section--navbar">
+      <!-- disappears on scroll -->
+      <div class="div--eventessentials">
+        <h3 class="h3--eventdates">Friday 17 - 19 January 2020</h3>
+        <p class="p--address">Tame HQ, Klerkegade 19, Copenhagen</p>
+      </div>
       <!-- FIXED section -->
-      <a href="./program.html"><button>Program</button></a>
-      <button>Tickets</button>
+      <div class="div--navbuttons">
+        <div class="div--button" id="programButton">
+          <img class="img-buttonicon" src="./images/icon_schedule.svg" />
+          <p>Program</p>
+        </div>
+
+        <div class="div--button" id="ticketsButton">
+          <img class="img-buttonicon" src="./images/tickets.svg" />
+          <p>Get tickets</p>
+        </div>
+      </div>
     </section>
     <section class="section--about">
       <h2>About</h2>
@@ -35,7 +49,6 @@
 
       <section class="section--speakers">
         <h2>Speakers</h2>
-        <!-- create dynamic speaker elements -->
         <div class="div--speakerFeatured">
           <img class="img--speakerFeatured" />
           <h3 class="section--header">Speaker Name</h3>
@@ -45,7 +58,7 @@
 
       <section class="section--programRedirect">
         <h2>Program</h2>
-        <img src="./images/calendar.svg" />
+        <div id="calendarSvgContainer"></div>
       </section>
 
       <section class="section--tickets">
@@ -55,33 +68,5 @@
         </div>
       </section>
     </main>
-
-    <template id="statisticsTemplate">
-      <section class="section--statistics">
-        <!-- create dynamic statistics elements -->
-        <div class="div--statisticItem">
-          <img class="img--statisticIcon" />
-          <h3 id="sectionName" class="section--header">4 stages</h3>
-        </div>
-      </section>
-    </template>
-
-    <template id="speakersTemplate">
-      <section class="section--speakers">
-        <h2>Speakers</h2>
-        <!-- create dynamic speaker elements -->
-        <div class="div--speakerFeatured">
-          <h3 class="section--header">Speaker Name</h3>
-          <p>Speaker Position</p>
-        </div>
-      </section>
-    </template>
-
-    <template id="programRedirectTemplate">
-      <section class="section--programRedirect">
-        <h2>Program</h2>
-        <img src="./images/calendar.svg" />
-      </section>
-    </template>
   </body>
 </html>

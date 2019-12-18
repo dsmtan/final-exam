@@ -1,11 +1,9 @@
 :root {
+  --mainColor: '#ff8a8a';
+  --secondaryColor: #c4c4c4;
   --colNum: 0;
   --windowHeight: 45px;
 }
-
-$mainColour: #bd94e8;
-$colour2: #c6f3e8;
-$colour3: #d6d6d6;
 
 $tameNavy: #0b304c;
 $tameGrey: #c4c4c4;
@@ -28,14 +26,10 @@ $headerFont: 'Montserrat', sans-serif;
 
 html,
 body {
-  position: sticky;
   height: 100%;
+  width: 100%;
   margin: 0;
   color: $tameNavy;
   font-family: $mainFont;
-}
-
-body {
-  overflow: hidden;
-  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }

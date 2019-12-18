@@ -17,9 +17,6 @@
 	<g id="i_calendar">
 		<g id="calendar">
 			<g>
-				
-					<image style="overflow:visible;opacity:0.2;enable-background:new    ;" width="635" height="535" xlink:href="4F0DA82E92D03DE8.png"  transform="matrix(1 0 0 1 0 126)">
-				</image>
 				<path class="st0" d="M568.5,638.9H51.6C27.5,638.9,8,622.7,8,602.6V134.2h604.1v468.4C612.1,622.7,592.6,638.9,568.5,638.9z"/>
 			</g>
 			<path id="bar_color" class="st1" d="M612.1,54.8v79.4H8V54.8C8,39,23.4,26.2,42.3,26.2h535.5C596.7,26.2,612.1,39,612.1,54.8z"/>

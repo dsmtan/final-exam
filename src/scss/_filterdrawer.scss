@@ -60,11 +60,11 @@
     font-weight: 400;
 
     &.tagClicked {
-      background-color: $mainColour;
+      background-color: var(--mainColor);
     }
 
     &.filterClicked {
-      border: 1.3px solid $mainColour;
+      border: 1.3px solid var(--mainColor);
     }
   }
 
@@ -83,10 +83,10 @@
     border-left: 6px solid $tameNavy;
 
     &.filterClicked {
-      border-top: 1.4px solid $mainColour;
-      border-right: 1.4px solid $mainColour;
-      border-bottom: 1.4px solid $mainColour;
-      border-left: 6px solid $mainColour;
+      border-top: 1.4px solid var(--mainColor);
+      border-right: 1.4px solid var(--mainColor);
+      border-bottom: 1.4px solid var(--mainColor);
+      border-left: 6px solid var(--mainColor);
     }
   }
 
