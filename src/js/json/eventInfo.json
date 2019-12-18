@@ -23,7 +23,7 @@
   "location": "Klerkegade 19, Copenhagen",
   "coverPhoto": "./images/coverPhoto.jpg",
   "aboutImage": "",
-  "description": "DigiTECH 2020 celebrates the digital tech industry and the amazing people working in it! <br>Our mission is to gather all creative people working in the tech industry and learn from each other, inspire each other and show that the best place to be is where.<br>There will be innovative speakers ready with inspirational talks, you can join panel discussions, workshops and everything else a tech heart desires!<br>Explore the newest trends, innovations and movements in the tech industry at DigiTECH 2020!",
+  "description": "DigiTECH 2020 celebrates the digital tech industry and the amazing people working in it! <br>Our mission is to gather all creative people working in the tech industry and learn from each other, inspire each other and show that the best place to work is where tech and design meet.<br>There will be innovative speakers ready with inspirational talks, you can join panel discussions, workshops and everything else a tech heart desires!<br>Explore the newest trends, innovations and movements in the tech industry at DigiTECH 2020!",
   "eventType": "Ticket",
   "hashtags": "#digitechforlife",
   "publishedBlocks": [
@@ -34,8 +34,8 @@
     "Partners",
     "Venue"
   ],
-  "mainEventColour": "",
-  "secondaryColour": "",
+  "mainEventColor": "#945FE0",
+  "secondaryColor": "#9BDFCE",
   "ticketTypes": [
     {
       "ticketName": "Single day",
