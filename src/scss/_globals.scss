@@ -1,5 +1,6 @@
 :root {
   --colNum: 0;
+  --windowHeight: 45px;
 }
 
 $mainColour: #bd94e8;
@@ -27,8 +28,14 @@ $headerFont: 'Montserrat', sans-serif;
 
 html,
 body {
+  position: sticky;
   height: 100%;
   margin: 0;
-  color: $mainColour;
+  color: $tameNavy;
   font-family: $mainFont;
+}
+
+body {
+  overflow: hidden;
+  overscroll-behavior: none;
 }

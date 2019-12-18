@@ -1,3 +1,4 @@
+import moment from 'moment';
 import createSessionCards from './sessionCard.js';
 
 ('use strict');
@@ -24,6 +25,7 @@ let chosenFilters = {
   stages: [],
 };
 let filtersApplied = false;
+let drawerOpened = false;
 
 //templates
 const daysButtonTemplate = document.querySelector('#daysButtonTemplate')
@@ -151,7 +153,10 @@ const showFilteredList = filteredSessions => {
 };
 
 const toggleFilterDrawer = () => {
-  mobileFilterDrawer.classList.toggle('filterdrawerOpened');
+  drawerOpened = !drawerOpened;
+  drawerOpened
+    ? (mobileFilterDrawer.style.height = window.innerHeight - 50 + 'px')
+    : (mobileFilterDrawer.style.height = '45px');
   filterdrawerContent.classList.toggle('hide');
   applyFilterSection.classList.toggle('hide');
 };
@@ -358,15 +363,13 @@ const constructDaysBar = eventDays => {
   let dayDurationHours = 0;
   eventDays.map((day, index) => {
     let dayNumber = index + 1;
-    let dayStart = new Date(`${day.date}, ${day.startTime}`); //convert to UTC format
-    let dayEnd = new Date(`${day.date}, ${day.endTime}`);
-    dayDurationHours = (dayEnd.getTime() - dayStart.getTime()) / (1000 * 3600); //number of sections to create vertical timeline
+    let dayStart = moment(`${day.date} ${day.startTime}`, 'MM-DD-YYYY HH:mm');
+    let dayEnd = moment(`${day.date} ${day.endTime}`, 'MM-DD-YYYY HH:mm');
+    dayDurationHours = dayEnd.diff(dayStart, 'hours', true); //number of sections to create vertical timeline
 
-    let dayDateNumber = dayStart.getDate();
-    const abbrOptions = { weekday: 'short' };
-    let dayOfWeek = new Intl.DateTimeFormat('en-US', abbrOptions).format(
-      dayStart
-    );
+    let dayDateNumber = moment(dayStart).format('DD');
+    let dayOfWeek = moment(day.date, 'MM-DD-YYYY').format('ddd');
+
     const dayData = {
       dayNumber,
       dayDateNumber,
@@ -452,7 +455,7 @@ const fillColumnTemplate = stageName => {
     stageColumnCopy.querySelector('#dot3').classList.add('hide');
   }
   if (stageName === 'Panel Stage') {
-    stageColumnCopy.querySelector('#dot1').style.backgroundColor = '#fae5ca';
+    stageColumnCopy.querySelector('#dot1').style.backgroundColor = '#f8d3a4';
     stageColumnCopy.querySelector('#dot2').style.backgroundColor = '#F5C9C9';
     stageColumnCopy.querySelector('#dot3').classList.add('hide');
   }
@@ -523,4 +526,5 @@ const displaySessionsByStage = sessionsByStage => {
       programSettings.eventSessionTypes
     )
   );
+ 
 };

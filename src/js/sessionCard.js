@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const sessionCardTemplate = document.querySelector('#sessionCardTemplate')
   .content;
 
@@ -44,17 +46,12 @@ const createSessionCards = (
   if (favouriteListClicked || filtersApplied) {
     //same layout for filters
     durationDiv.style.width = '100%';
-    const utcDate = new Date(sessionDate);
-    const options = {
-      weekday: 'short',
-      day: 'numeric',
-      month: 'short',
-    };
-    const stringDate = new Intl.DateTimeFormat('en-GB', options).format(
-      utcDate
-    );
+    const stringDate = moment(
+      sessionDate + ' ' + sessionStartTime,
+      'MM-DD-YYYY HH:mm'
+    ).format('ddd DD MMM hh:mm');
 
-    durationDiv.innerHTML = `${sessionStage.toUpperCase()} &nbsp;&nbsp;|&nbsp;&nbsp; ${stringDate} ${sessionStartTime} - ${sessionEndTime}`;
+    durationDiv.innerHTML = `${sessionStage.toUpperCase()} &nbsp;&nbsp;|&nbsp;&nbsp; ${stringDate} - ${sessionEndTime}`;
 
     if (favouriteListClicked) {
       heartIcon.src = './images/heart_solid.svg';
@@ -125,8 +122,8 @@ const createSpeakerAvatar = (sessionSpeaker, speakers) => {
 };
 
 const calculateSessionDuration = (dayDate, startTime, endTime) => {
-  let sessionStart = new Date(`${dayDate}, ${startTime}`); //convert to UTC format
-  let sessionEnd = new Date(`${dayDate}, ${endTime}`);
+  let sessionStart = moment(`${dayDate} ${startTime}`, 'MM-DD-YYYY HH:mm');
+  let sessionEnd = moment(`${dayDate} ${endTime}`, 'MM-DD-YYYY HH:mm');
   let totalMins = Math.floor((sessionEnd - sessionStart) / 60000);
   let durationHrs = Math.floor(totalMins / 60);
   let durationMin = totalMins - durationHrs * 60;
