@@ -1,0 +1,252 @@
+@mixin index--desktop {
+  .body--indexwrapper {
+    h2 {
+      text-align: left;
+      margin-left: 9%;
+      font-size: 1.6em;
+    }
+  }
+
+  .header--main {
+    background-position: center 100%;
+    text-align: left;
+    padding-left: 9vw;
+    height: calc(100vh - 80px);
+  }
+
+  .h1--eventtitle {
+    padding-top: calc(85vh - 26%);
+    font-size: 3.2em;
+  }
+
+  .body--indexwrapper .h2--eventsubtitle {
+    text-align: left;
+    font-size: 1.6em;
+    margin-left: 0;
+  }
+
+  .section--navbar {
+    position: relative;
+    height: 80px;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 8px 0 10px;
+    border-bottom: 1px solid black;
+
+    &.onscrollHeight {
+      height: auto;
+    }
+  }
+
+  .div--eventessentials {
+    display: inline-block;
+    width: calc(100% - 330px);
+    padding-left: 0;
+    font-size: 1.1em;
+
+    &.scrollDown {
+      display: inline-block;
+    }
+  }
+
+  .div--navbuttons {
+    display: inline-block;
+    width: auto;
+    padding: 0;
+    text-align: right;
+
+    .div--button {
+      width: 160px;
+      font-size: 1.1em;
+      height: 45px;
+      padding-top: 5px;
+    }
+  }
+
+  .section--about {
+    height: auto;
+    display: grid;
+    max-width: 1150px;
+    padding: 1.5em 9vw;
+    margin: 5em auto 3em auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3.5em auto;
+    grid-gap: 5px 2em;
+    justify-items: center;
+    align-items: center;
+
+    #h2--about {
+      justify-self: start;
+      margin: 10px 0;
+    }
+
+    .p--aboutDescription {
+      align-self: start;
+    }
+  }
+
+  .img--about {
+    grid-area: 1 / 1 / 3 / 1;
+    align-self: start;
+    max-width: 80%;
+    max-height: 92%;
+    height: auto;
+    margin: 0;
+    margin-top: 0;
+  }
+
+  .mainPageWrapper {
+    section {
+      padding: 1.5em 9vw;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .mainPageWrapper .section--statistics {
+    width: 70%;
+    height: auto;
+    max-width: 950px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    margin-bottom: 5em;
+    grid-column-gap: 20px;
+
+    p {
+      font-size: 1.2em;
+    }
+
+    .statisticnumber {
+      font-size: 4em;
+    }
+  }
+
+  .section--speakers {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .div--firstspeakers,
+  .div--collapsiblespeakers {
+    height: auto;
+    width: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 5px;
+  }
+
+  .div--collapsiblespeakers {
+    padding-top: 3em;
+  }
+
+  .div--speakerfeatured {
+    padding: 10px;
+
+    h3 {
+      font-size: 1.2em;
+    }
+  }
+
+  .img--speakerfeatured {
+    width: 85%;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .section--programRedirect {
+    p {
+      text-align: left;
+      margin-left: 9%;
+    }
+  }
+
+  #calendarSvg {
+    width: auto;
+    height: 220px;
+  }
+
+  .div--voucher {
+    margin: 0 0 0 auto;
+    padding-right: 10%;
+    max-width: 450px;
+  }
+
+  .div--ticketTypes {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 12px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .div--ticketItem {
+    height: 300px;
+    width: 100%;
+    padding: 2em 0;
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    ul {
+      width: 100%;
+    }
+
+    li {
+      margin-left: 20%;
+    }
+  }
+
+  .div--partners {
+    width: 60%;
+    margin: 2em auto;
+    margin-bottom: 3em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 15px;
+    padding: 0;
+  }
+
+  .img--partnerFeatured {
+    display: block;
+    height: 150px;
+    width: 150px;
+    justify-self: center;
+  }
+
+  .mainPageWrapper .section--venuemap {
+    padding: 1.5em 9vw;
+    margin: 0 auto;
+    width: auto;
+  }
+
+  .div--venuewrapper {
+    padding-left: 9%;
+    padding-right: 9%;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0;
+  }
+
+  .div--venuedetails {
+    height: 100%;
+
+    h3 {
+      padding-top: 3.5em;
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+  }
+}

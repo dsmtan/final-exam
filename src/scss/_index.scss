@@ -1,5 +1,5 @@
 .body--indexwrapper {
-  width: 100vw;
+  width: 100%;
   max-width: 100vw;
   margin: 0;
   color: black;
@@ -29,7 +29,8 @@ button {
 
 .header--main {
   margin: 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   height: 85vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -41,6 +42,7 @@ button {
 .h1--eventtitle {
   padding-top: 37vh;
   display: block;
+  max-width: 100%;
   font-family: $headerFont;
   margin: 0;
   margin-bottom: 5px;
@@ -60,7 +62,7 @@ button {
   bottom: 0;
   background-color: white;
   padding-bottom: 7px;
-  width: 100vw;
+  width: 100%;
   margin: 0;
   transition: height 0.4s ease-out;
   overflow: hidden;
@@ -74,7 +76,8 @@ button {
 
 .div--eventessentials {
   padding: 10px;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   overflow: hidden;
 
   &.scrollDown {
@@ -96,13 +99,15 @@ button {
 
 .div--navbuttons {
   text-align: center;
-  width: 100vw;
+  width: 100%;
   padding-top: 5px;
+  margin: 0;
+  max-width: 100%;
 
   .div--button {
     display: inline-block;
     height: 40px;
-    width: 43vw;
+    width: 154px;
     color: white;
     padding: 3.5px;
     text-align: center;
@@ -130,6 +135,7 @@ button {
 
   #ticketsButton {
     background-color: var(--mainColor);
+    cursor: pointer;
   }
 }
 
@@ -149,7 +155,7 @@ button {
 }
 
 .mainPageWrapper {
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   padding-bottom: 3em;
 
@@ -224,6 +230,7 @@ button {
 }
 
 .div--collapsiblespeakers {
+  // display: none;
   height: auto;
   overflow: hidden;
   transition: height 5s ease;
@@ -240,6 +247,7 @@ button {
   text-align: center;
   font-weight: bold;
   padding: 10px;
+  cursor: pointer;
 }
 
 .div--speakerfeatured {
@@ -249,10 +257,12 @@ button {
 
   h3 {
     font-size: 1em;
+    margin-bottom: 7px;
   }
 
   p {
     font-size: 0.8em;
+    margin-top: 0;
   }
 }
 
@@ -288,7 +298,7 @@ button {
 }
 svg {
   width: 75%;
-  max-width: 100vw;
+  max-width: 100%;
 }
 
 #calendarSvg {
@@ -318,6 +328,10 @@ svg {
   80% {
     opacity: 1;
   }
+}
+
+.section--tickets {
+  margin-bottom: 2.5em;
 }
 
 #voucher {
@@ -394,6 +408,7 @@ svg {
 
 .div--partners {
   text-align: center;
+  margin-bottom: 2.5em;
 }
 
 .img--partnerFeatured {
@@ -408,23 +423,29 @@ svg {
   background-position: center;
 }
 
-.section--venuemap {
+.mainPageWrapper .section--venuemap {
   position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-#googlemaps {
+.div--googlemaps {
+  height: 300px;
+  background-image: url(../images/googlemapsscreenshot.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 51% center;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
   margin: 0;
-  border: none;
-  font-family: $mainFont;
 }
 
 .div--venuedetails {
+  text-align: center;
   height: 110px;
   background-color: var(--secondaryColor);
-  padding: 27px 10px 10px;
-  margin-top: -5px;
+  padding: 20px 10px 10px;
   border-radius: 2px;
 
   h3 {
@@ -437,11 +458,15 @@ svg {
 }
 
 footer {
+  width: 100%;
+  overflow: hidden;
   height: auto;
   text-align: center;
-  margin-bottom: 85px;
+  margin-top: 10px;
+  margin-bottom: 120px;
 
   p {
+    max-width: 100%;
     margin: 0 auto 10px;
     font-weight: bold;
   }
@@ -449,6 +474,7 @@ footer {
 
 .icons--some {
   margin: 0 auto;
+  max-width: 100%;
   img {
     height: 35px;
     margin: 2px;

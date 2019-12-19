@@ -10,13 +10,15 @@
 
   <body class="body--indexwrapper">
     <header class="header--main">
-      <h1 class="h1--eventtitle">Event title</h1>
-      <h2 class="h2--eventsubtitle">Event tagline</h2>
+      <h1 class="h1--eventtitle"></h1>
+      <h2 class="h2--eventsubtitle"></h2>
     </header>
     <section class="section--navbar">
       <!-- disappears on scroll -->
       <div class="div--eventessentials">
-        <h3 class="h3--eventdates">17 - 19 January 2020</h3>
+        <h3 class="h3--eventdates">
+          Fri 17 - Sun 19 January 2020, start at 10:00
+        </h3>
         <p class="p--address">Tame HQ, Klerkegade 19, Copenhagen</p>
       </div>
       <!-- FIXED section -->
@@ -35,7 +37,7 @@
       </div>
     </section>
     <section class="section--about">
-      <h2>About</h2>
+      <h2 id="h2--about">What about DigiTECH 2020?</h2>
       <div class="p--aboutDescription"></div>
       <img class="img--about" />
     </section>
@@ -89,26 +91,21 @@
       </section>
       <section class="section--partners">
         <h2>Partners</h2>
-        <div class="div--partners">
-          <div class="div--logopartner"></div>
-        </div>
+        <div class="div--partners"></div>
       </section>
       <section class="section--venuemap">
         <h2>Venue</h2>
-        <iframe
-          id="googlemaps"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.137434980979!2d12.58207225152487!3d55.686598304468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652531eb4063d2b%3A0x76cd07a0f84853a5!2sKlerkegade%2019%2C%201308%20K%C3%B8benhavn%2C%20Denemarken!5e0!3m2!1snl!2sse!4v1576729262570!5m2!1snl!2sse"
-          frameborder="0"
-          style="border:0;"
-        ></iframe>
-        <div class="div--venuedetails">
-          <h3>Tame HQ</h3>
-          <p class="p--address">Klerkegade 19<br />1308 Copenhagen</p>
+        <div class="div--venuewrapper">
+          <div class="div--googlemaps"></div>
+          <div class="div--venuedetails">
+            <h3>Tame HQ</h3>
+            <p class="p--address">Klerkegade 19<br />1308 Copenhagen</p>
+          </div>
         </div>
       </section>
     </main>
     <footer>
-      <p>#digiTECH2020</p>
+      <p class="p--hashtag">#digitech2020</p>
       <div class="icons--some">
         <img src="./images/ico_linkedin.svg" />
         <img src="./images/ico_facebook.svg" />
