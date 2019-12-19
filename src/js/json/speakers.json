@@ -1,82 +1,99 @@
 [
   {
+    "speakerName": "Anders Stenfors",
+    "speakerImgURL": "./images/anders.jpg",
+    "speakerFeaturedImg": "./images/anders.png",
+    "speakerPosition": "Founder of DigiTECH"
+  },
+  {
+    "speakerName": "Lena Stavik",
+    "speakerImgURL": "./images/lena.jpg",
+    "speakerFeaturedImg": "./images/lena.png",
+    "speakerPosition": "CEO of Fingerspitz"
+  },
+  {
+    "speakerName": "Idris Alegrio",
+    "speakerImgURL": "./images/idris.jpg",
+    "speakerFeaturedImg": "./images/idris.png",
+    "speakerPosition": "Product Designer at Shape"
+  },
+
+  {
+    "speakerName": "Jane Watt",
+    "speakerImgURL": "./images/jane.jpg",
+    "speakerFeaturedImg": "./images/jane.png",
+    "speakerPosition": "UX designer at Stupid Studio"
+  },
+  {
+    "speakerName": "Elisa Walker",
+    "speakerImgURL": "./images/elisa.jpg",
+    "speakerFeaturedImg": "./images/elisa.png",
+    "speakerPosition": "Solution engineer at Microsoft"
+  },
+  {
     "speakerName": "David Kadlec",
     "speakerImgURL": "./images/david.jpg",
+    "speakerFeaturedImg": "./images/david.png",
     "speakerPosition": "CEO of Invision"
   },
   {
     "speakerName": "Andrew Nelson",
     "speakerImgURL": "./images/andrew.jpg",
+    "speakerFeaturedImg": "./images/andrew.png",
     "speakerPosition": "Software engineer at Unity"
-  },
-  {
-    "speakerName": "Sarah Petersen",
-    "speakerImgURL": "./images/sarah.jpg",
-    "speakerPosition": "CEO of AM Copenhagen"
-  },
-  {
-    "speakerName": "Jane Watt",
-    "speakerImgURL": "./images/jane.jpg",
-    "speakerPosition": "UX designer and developer at Stupid Studio"
   },
   {
     "speakerName": "Nikolai Godfrey",
     "speakerImgURL": "./images/nikolai.jpg",
+    "speakerFeaturedImg": "./images/nikolai.png",
     "speakerPosition": "Content Creator at Vice"
-  },
-  {
-    "speakerName": "Idris Alegrio",
-    "speakerImgURL": "./images/idris.jpg",
-    "speakerPosition": "Product Designer"
-  },
-  {
-    "speakerName": "Elisa Walker",
-    "speakerImgURL": "./images/elisa.jpg",
-    "speakerPosition": "Technical solution engineer at Microsoft"
   },
   {
     "speakerName": "Morgan Pope",
     "speakerImgURL": "./images/morgan.jpg",
+    "speakerFeaturedImg": "./images/morgan.png",
     "speakerPosition": "CEO of Rise"
   },
   {
     "speakerName": "Johannes Stanley",
     "speakerImgURL": "./images/johannes.jpg",
+    "speakerFeaturedImg": "./images/johannes.png",
     "speakerPosition": "Senior Graphic Designer at Won Won"
   },
   {
     "speakerName": "Jarmila Hill",
     "speakerImgURL": "./images/jarmila.jpg",
+    "speakerFeaturedImg": "./images/jarmila.png",
     "speakerPosition": "Digital Developer at KathArt"
   },
   {
     "speakerName": "Erkki Grosch",
     "speakerImgURL": "./images/erkki.jpg",
+    "speakerFeaturedImg": "./images/erkki.png",
     "speakerPosition": "Art Director at Sunrise"
+  },
+  {
+    "speakerName": "Sarah Petersen",
+    "speakerImgURL": "./images/sarah.jpg",
+    "speakerFeaturedImg": "./images/sarah.png",
+    "speakerPosition": "CEO of AM Copenhagen"
   },
   {
     "speakerName": "Mira Schleier",
     "speakerImgURL": "./images/mira.jpg",
+    "speakerFeaturedImg": "./images/mira.png",
     "speakerPosition": "Creative producer at ABEL"
-  },
-  {
-    "speakerName": "Lena Stavik",
-    "speakerImgURL": "./images/lena.jpg",
-    "speakerPosition": "CEO of Fingerspitz"
   },
   {
     "speakerName": "Samuel Lind",
     "speakerImgURL": "./images/samuel.jpg",
+    "speakerFeaturedImg": "./images/samuel.png",
     "speakerPosition": "Marketing Director at Frankly"
   },
   {
     "speakerName": "Chloe Edeleev",
     "speakerImgURL": "./images/chloe.jpg",
+    "speakerFeaturedImg": "./images/chloe.png",
     "speakerPosition": "Senior UX Designer at Signify"
-  },
-  {
-    "speakerName": "Anders Stenfors",
-    "speakerImgURL": "./images/anders.jpg",
-    "speakerPosition": "Founder of DigiTECH"
   }
 ]

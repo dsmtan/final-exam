@@ -10,8 +10,8 @@
 
   <body class="body--indexwrapper">
     <header class="header--main">
-      <h1 class="h1--eventtitle">DigiTECH 2020</h1>
-      <h2 class="h2--eventsubtitle">The art of digital marketing.</h2>
+      <h1 class="h1--eventtitle">Event title</h1>
+      <h2 class="h2--eventsubtitle">Event tagline</h2>
     </header>
     <section class="section--navbar">
       <!-- disappears on scroll -->
@@ -21,10 +21,12 @@
       </div>
       <!-- FIXED section -->
       <div class="div--navbuttons">
-        <div class="div--button" id="programButton">
-          <img class="img-buttonicon" src="./images/icon_schedule.svg" />
-          <p>Program</p>
-        </div>
+        <a href="program.html"
+          ><div class="div--button" id="programButton">
+            <img class="img-buttonicon" src="./images/icon_schedule.svg" />
+            <p>Program</p>
+          </div></a
+        >
 
         <div class="div--button" id="ticketsButton">
           <img class="img-buttonicon" src="./images/tickets.svg" />
@@ -34,7 +36,7 @@
     </section>
     <section class="section--about">
       <h2>About</h2>
-      <p class="p--aboutDescription"></p>
+      <div class="p--aboutDescription"></div>
       <img class="img--about" />
     </section>
 
@@ -42,31 +44,82 @@
       <section class="section--statistics">
         <!-- create dynamic statistics elements -->
         <div class="div--statisticItem">
-          <img class="img--statisticIcon" />
-          <h3 id="sectionName" class="section--header">4 stages</h3>
+          <p class="statisticnumber">4</p>
+          <p class="statistictype">stages</p>
+        </div>
+        <div class="div--statisticItem">
+          <p class="statisticnumber">16</p>
+          <p class="statistictype">speakers</p>
+        </div>
+        <div class="div--statisticItem">
+          <p class="statisticnumber">25</p>
+          <p class="statistictype">workshops</p>
+        </div>
+        <div class="div--statisticItem">
+          <p class="statisticnumber">47</p>
+          <p class="statistictype">sessions</p>
         </div>
       </section>
 
       <section class="section--speakers">
         <h2>Speakers</h2>
-        <div class="div--speakerFeatured">
-          <img class="img--speakerFeatured" />
-          <h3 class="section--header">Speaker Name</h3>
-          <p>Speaker Position</p>
-        </div>
+        <div class="div--firstspeakers"></div>
+        <div class="div--collapsiblespeakers collapsed"></div>
+        <button id="collapseButton">See more</button>
       </section>
 
       <section class="section--programRedirect">
         <h2>Program</h2>
-        <div id="calendarSvgContainer"></div>
+        <p>Check out our awesome program and save your favourites!</p>
+        <a href="program.html"><div id="calendarSvgContainer"></div></a>
       </section>
 
       <section class="section--tickets">
         <h2>Tickets</h2>
-        <div class="div--ticketTypes">
-          <div class="div--ticketItem"></div>
+        <div class="div--voucher">
+          <input
+            type="text"
+            id="voucher"
+            name="voucher"
+            placeholder="Add voucher code"
+          />
+          <button class="button--voucher">Redeem</button>
+        </div>
+        <div class="div--ticketTypes"></div>
+      </section>
+      <section class="section--partners">
+        <h2>Partners</h2>
+        <div class="div--partners">
+          <div class="div--logopartner"></div>
         </div>
       </section>
+      <section class="section--venuemap">
+        <h2>Location</h2>
+        <div class="div--map"></div>
+      </section>
     </main>
+    <footer>some blabla</footer>
+
+    <template id="featuredSpeakerTemplate">
+      <div class="div--speakerfeatured">
+        <!-- <div class="div--speakeroverlay"></div> -->
+        <img class="img--speakerfeatured" />
+
+        <h3 class="h3--speakername">Speaker Name</h3>
+        <p class="h3--speakerposition">Speaker Position</p>
+      </div>
+    </template>
+
+    <template id="ticketTemplate">
+      <div class="div--ticketItem">
+        <h3 class="h3--ticketname">Ticket name</h3>
+        <p class="p--ticketprice">Price</p>
+        <ul class="list--included"></ul>
+      </div>
+    </template>
+
+    <template id="featuredPartnerTemplate">
+      <div class="img--partnerFeatured"></div>
+    </template>
   </body>
 </html>

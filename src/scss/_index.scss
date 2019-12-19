@@ -3,6 +3,22 @@
   max-width: 100vw;
   margin: 0;
   color: black;
+  overflow-x: hidden;
+
+  button {
+    font-family: $mainFont;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  h2 {
+    font-family: $headerFont;
+    font-size: 1.4em;
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
 }
 
 button {
@@ -20,7 +36,6 @@ button {
   background-position: 32%;
   color: white;
   text-align: center;
-  padding: 0 10vw;
 }
 
 .h1--eventtitle {
@@ -47,6 +62,8 @@ button {
   padding-bottom: 7px;
   width: 100vw;
   margin: 0;
+  transition: height 0.4s ease-out;
+  overflow: hidden;
 
   &.onscrollHeight {
     height: 65px;
@@ -93,7 +110,7 @@ button {
     p {
       position: relative;
       margin: 0;
-      margin-top: 4px;
+      margin-top: 5px;
       text-align: left;
     }
   }
@@ -115,20 +132,278 @@ button {
   }
 }
 
-svg {
-  width: 75%;
-  max-width: 100vw;
+.section--about {
+  padding: 1.5em 1.8em;
+  text-align: center;
+
+  p {
+    text-align: left;
+  }
+}
+
+.img--about {
+  margin: 1em;
+  max-width: 70vw;
+  height: auto;
 }
 
 .mainPageWrapper {
   width: 100vw;
   overflow: hidden;
+  padding-bottom: 70px;
+
+  section {
+    padding: 1.5em 1.8em;
+  }
 }
-// #calendarSvg {
-//   .svgMain {
-//     fill: var(--mainColor);
-//   }
-//   .svgSecond {
-//     fill: var(--secondaryColor);
+
+.section--statistics {
+  margin: 0 auto;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-column-gap: 15px;
+  grid-row-gap: 40px;
+  text-align: center;
+  margin-bottom: 3em;
+
+  p {
+    margin: 0;
+  }
+
+  .statisticnumber {
+    color: var(--mainColor);
+    font-size: 3.7em;
+    font-weight: 700;
+    background: -webkit-linear-gradient(
+      270deg,
+      var(--secondaryColor),
+      var(--mainColor)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 150% 150%;
+    animation: gradientMove 3s ease-in-out infinite;
+  }
+
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 70% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+
+  .statistictype {
+    font-size: 1.1em;
+    font-weight: 700;
+  }
+}
+
+.section--speakers {
+  text-align: center;
+}
+
+.div--firstspeakers,
+.div--collapsiblespeakers {
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-row-gap: 5px;
+  grid-column-gap: 1em;
+}
+
+.div--collapsiblespeakers {
+  height: auto;
+  overflow: hidden;
+  transition: height 5s ease;
+
+  &.collapsed {
+    height: 0;
+  }
+}
+
+#collapseButton {
+  background-color: white;
+  color: var(--mainColor);
+  font-family: $mainFont;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.div--speakerfeatured {
+  padding: 10px;
+  text-align: center;
+
+  h3 {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 0.8em;
+  }
+}
+
+.img--speakerfeatured {
+  max-width: 100%;
+  z-index: 0;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+// .div--speakeroverlay {
+//   margin: 0 auto;
+//   position: absolute;
+//   top: 0;
+//   height: 121px;
+//   width: 120px;
+//   border-radius: 50%;
+//   opacity: 0;
+//   background-color: var(--secondaryColor);
+
+//   &:hover {
+//     transition: 0.4s ease;
+//     opacity: 0.95;
 //   }
 // }
+
+.section--programRedirect {
+  text-align: center;
+}
+svg {
+  width: 75%;
+  max-width: 100vw;
+}
+
+#calendarSvg {
+  margin-top: 1em;
+  margin-bottom: 3em;
+
+  .svgMain {
+    fill: var(--mainColor);
+  }
+  .svgSecond {
+    fill: var(--secondaryColor);
+  }
+  .crosses {
+    stroke: var(--secondaryColor);
+    stroke-width: 7px;
+  }
+
+  #cross2 {
+    animation: fadeInOut 2.5s ease-out infinite;
+  }
+}
+
+@keyframes fadeInOut {
+  30% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+}
+
+#voucher {
+  border: none;
+  border-bottom: 1px solid $tameGrey;
+  height: 28px;
+  width: calc(70% - 15px);
+  font-family: $mainFont;
+  font-size: 0.9em;
+  color: $tameGrey;
+  padding-left: 2px;
+  margin: 10px;
+  margin-left: 0;
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid var(--mainColor);
+  }
+}
+
+.button--voucher {
+  width: 30%;
+  background-color: $tameGrey;
+  color: white;
+  font-size: 0.9em;
+  height: 28px;
+  border-radius: 2px;
+  border-bottom: 2px solid $tameGrey;
+}
+
+.div--ticketItem {
+  box-shadow: 0.7px 0.7px 3.5px 1px #c4c4c4ad;
+  border-radius: 10px;
+  height: auto;
+  padding: 22px;
+  margin-top: 1em;
+  text-align: center;
+
+  &:hover {
+    border: 1px solid var(--mainColor);
+  }
+
+  h3 {
+    font-size: 1.3em;
+    margin: 0;
+  }
+
+  p {
+    margin: 10px auto;
+    color: var(--secondaryColor);
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+
+  ul {
+    margin: 1em auto;
+    width: 70%;
+  }
+
+  li {
+    margin: 0 auto;
+    width: auto;
+    text-align: left;
+    list-style: none;
+    font-weight: 300;
+    margin-left: 17vw;
+
+    &:before {
+      content: '\2713';
+      margin-right: 10px;
+    }
+  }
+}
+
+.div--partners {
+  text-align: center;
+}
+
+.img--partnerFeatured {
+  display: inline-block;
+  margin: 5px;
+  height: 23vw;
+  width: 23vw;
+  border-radius: 50%;
+  box-shadow: 0.5px 0.8px 3px 0.5px #c4c4c4ad;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+footer {
+  padding-bottom: 70px;
+}
