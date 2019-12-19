@@ -84,7 +84,6 @@
 }
 
 .program--grid {
-  position: fixed;
   background-color: $tameLightGrey;
   width: 100%;
   height: calc(100vh - 135px - 30px);
@@ -116,7 +115,6 @@
   left: 0px;
   background-color: $tameLightGrey;
   z-index: 10;
-  overscroll-behavior: none;
 
   p {
     margin: 0;
