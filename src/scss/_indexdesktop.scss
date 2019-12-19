@@ -3,6 +3,7 @@
     h2 {
       text-align: left;
       margin-left: 9%;
+      font-size: 1.6em;
     }
   }
 
@@ -15,23 +16,23 @@
 
   .h1--eventtitle {
     padding-top: calc(85vh - 26%);
-    font-size: 3em;
+    font-size: 3.2em;
   }
 
   .body--indexwrapper .h2--eventsubtitle {
     text-align: left;
-    font-size: 1.5em;
+    font-size: 1.6em;
     margin-left: 0;
   }
 
   .section--navbar {
     position: relative;
     height: 80px;
-    width: auto;
+    width: 90%;
+    max-width: 1200px;
     display: flex;
     align-items: center;
-    margin-left: 9vw;
-    margin-right: 9vw;
+    margin: 0 auto;
     padding: 8px 0 10px;
     border-bottom: 1px solid black;
 
@@ -42,8 +43,9 @@
 
   .div--eventessentials {
     display: inline-block;
-    width: calc(100% - 310px);
+    width: calc(100% - 330px);
     padding-left: 0;
+    font-size: 1.1em;
 
     &.scrollDown {
       display: inline-block;
@@ -57,12 +59,15 @@
     text-align: right;
 
     .div--button {
-      width: 150px;
+      width: 160px;
+      font-size: 1.1em;
+      height: 45px;
+      padding-top: 5px;
     }
   }
 
   .section--about {
-    height: 55vh;
+    height: auto;
     display: grid;
     max-width: 1150px;
     padding: 1.5em 9vw;
@@ -104,9 +109,20 @@
 
   .mainPageWrapper .section--statistics {
     width: 70%;
-    max-width: 880px;
+    height: auto;
+    max-width: 950px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-bottom: 1em;
+    grid-template-rows: auto;
+    margin-bottom: 5em;
+    grid-column-gap: 20px;
+
+    p {
+      font-size: 1.2em;
+    }
+
+    .statisticnumber {
+      font-size: 4em;
+    }
   }
 
   .section--speakers {
@@ -116,18 +132,32 @@
 
   .div--firstspeakers,
   .div--collapsiblespeakers {
+    height: auto;
     width: 80%;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 35vh;
-    grid-row-gap: 15px;
+    grid-template-rows: auto;
+    grid-row-gap: 5px;
+  }
+
+  .div--collapsiblespeakers {
+    padding-top: 3em;
   }
 
   .div--speakerfeatured {
-    padding: 30px;
+    padding: 10px;
+
+    h3 {
+      font-size: 1.2em;
+    }
   }
 
   .img--speakerfeatured {
     width: 85%;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .section--programRedirect {
