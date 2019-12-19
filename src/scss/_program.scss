@@ -87,8 +87,9 @@
   position: fixed;
   background-color: $tameLightGrey;
   width: 100%;
-  height: calc(100vh - 135px);
+  height: calc(100vh - 135px - 30px);
   max-height: 100vh;
+  margin-bottom: 45px;
   display: grid;
   grid-template-columns: 42px repeat(var(--colNum), 85vw);
   grid-gap: 0px;
@@ -109,7 +110,7 @@
   color: $tameGrey;
   text-align: center;
   padding-top: 49px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   scroll-snap-align: start;
   position: sticky;
   left: 0px;
@@ -127,7 +128,7 @@
   scroll-snap-align: start;
   padding-left: 2px;
   padding-right: 10px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   z-index: 5;
 
   .p--stagetitle {
