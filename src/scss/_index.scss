@@ -130,6 +130,7 @@ button {
 
   #ticketsButton {
     background-color: var(--mainColor);
+    cursor: pointer;
   }
 }
 
@@ -240,6 +241,7 @@ button {
   text-align: center;
   font-weight: bold;
   padding: 10px;
+  cursor: pointer;
 }
 
 .div--speakerfeatured {
@@ -249,10 +251,12 @@ button {
 
   h3 {
     font-size: 1em;
+    margin-bottom: 7px;
   }
 
   p {
     font-size: 0.8em;
+    margin-top: 0;
   }
 }
 
@@ -320,6 +324,10 @@ svg {
   }
 }
 
+.section--tickets {
+  margin-bottom: 2.5em;
+}
+
 #voucher {
   border: none;
   border-bottom: 1px solid $tameGrey;
@@ -346,10 +354,6 @@ svg {
   height: 28px;
   border-radius: 2px;
   border-bottom: 2px solid $tameGrey;
-}
-
-.section--tickets {
-  margin-bottom: 2.5em;
 }
 
 .div--ticketItem {
@@ -432,10 +436,10 @@ svg {
 }
 
 .div--venuedetails {
+  text-align: center;
   height: 110px;
   background-color: var(--secondaryColor);
-  padding: 27px 10px 10px;
-  margin-top: -5px;
+  padding: 20px 10px 10px;
   border-radius: 2px;
 
   h3 {
@@ -450,7 +454,8 @@ svg {
 footer {
   height: auto;
   text-align: center;
-  margin-bottom: 85px;
+  margin-top: 10px;
+  margin-bottom: 120px;
 
   p {
     margin: 0 auto 10px;
