@@ -7,6 +7,7 @@ const eventTagline = document.querySelector('.h2--eventsubtitle');
 const navBar = document.querySelector('.section--navbar');
 const navBarInfo = document.querySelector('.div--eventessentials');
 
+const aboutHeader = document.querySelector('#h2--about');
 const aboutDescription = document.querySelector('.p--aboutDescription');
 const aboutImage = document.querySelector('.img--about');
 const firstSpeakerDiv = document.querySelector('.div--firstspeakers');
@@ -38,6 +39,7 @@ window.onload = function() {
     setAbout(websiteSettings);
     setTickets(websiteSettings);
     setPartners(websiteSettings);
+    setVenue(websiteSettings);
   });
 
   import(
@@ -89,11 +91,13 @@ const setWebsiteColors = () => {
 
 const setHeader = websiteSettings => {
   header.style.backgroundImage = `url(${websiteSettings.coverPhoto})`;
+  document.title = websiteSettings.eventTitle;
   eventTitle.textContent = websiteSettings.eventTitle;
   eventTagline.textContent = websiteSettings.eventTagline;
 };
 
 const setAbout = websiteSettings => {
+  aboutHeader.textContent = websiteSettings.descriptionHeader;
   aboutDescription.innerHTML = websiteSettings.description;
   aboutImage.src = websiteSettings.aboutImage;
 };
@@ -143,6 +147,14 @@ const setPartners = websiteSettings => {
     ).style.backgroundImage = `url(${partner.logo})`;
     partnerDiv.appendChild(newPartner);
   });
+};
+
+const setVenue = ({ venueName, location, hashtags }) => {
+  document.querySelector(
+    '.p--address'
+  ).textContent = `${venueName}, ${location}`;
+  document.querySelector('.p--venuename').textContent = venueName;
+  document.querySelector('.p--hashtag').textContent = hashtags;
 };
 
 // var docWidth = document.documentElement.offsetWidth;
