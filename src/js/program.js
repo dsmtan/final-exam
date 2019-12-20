@@ -156,12 +156,17 @@ const showFilteredList = filteredSessions => {
 };
 
 const toggleFilterDrawer = () => {
-  drawerOpened = !drawerOpened;
-  drawerOpened
-    ? (mobileFilterDrawer.style.height = window.innerHeight - 50 + 'px')
-    : (mobileFilterDrawer.style.height = '45px');
-  filterdrawerContent.classList.toggle('hide');
-  applyFilterSection.classList.toggle('hide');
+  if (window.innerWidth < 800) {
+    drawerOpened = !drawerOpened;
+    drawerOpened
+      ? (mobileFilterDrawer.style.height = window.innerHeight - 50 + 'px')
+      : (mobileFilterDrawer.style.height = '45px');
+    filterdrawerContent.classList.toggle('hide');
+    applyFilterSection.classList.toggle('hide');
+  } else {
+    filterdrawerContent.classList.remove('hide');
+    applyFilterSection.classList.remove('hide');
+  }
 };
 
 const toggleFilter = (e, clickedFilter) => {
@@ -360,6 +365,14 @@ const createFilterdrawerContent = (
     });
     stageFilterSection.appendChild(newStageButton);
   });
+  displayDrawerDesktop();
+};
+
+const displayDrawerDesktop = () => {
+  if (window.innerWidth > 800) {
+    filterdrawerContent.classList.remove('hide');
+    applyFilterSection.classList.remove('hide');
+  }
 };
 
 const constructDaysBar = eventDays => {
